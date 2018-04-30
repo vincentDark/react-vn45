@@ -1,0 +1,66 @@
+.s1-title > div{
+    width: calc(100%/6);
+    float: left;
+    background-color: hsl(110, 72%, 28%);
+    height: 31px;
+    line-height: 31px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.s1-title > div > .s1-title-number{
+    float: left;
+    height:31px;
+    line-height:31px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #FFFFFF;
+    width: 27%;
+    box-sizing: border-box;
+}
+
+.s1-title > div > .s1-title-price{
+    float: left;
+    height:31px;
+    line-height:31px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #FFFFFF;
+    width: 28%;
+    box-sizing: border-box;
+}
+
+.s1-title > div > .s1-title-order{
+    float: left;
+    height:31px;
+    line-height:31px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    color: #FFFFFF;
+    width: 45%;
+    box-sizing: border-box;
+}
+
+.double{
+    background-color: hsl(110, 72%, 38%) !important;
+}
+
+.maxheight{
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#fastchoose .input-group .submittt{
+    color: white;
+    background: #1f587f;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}

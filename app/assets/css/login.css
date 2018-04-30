@@ -1,0 +1,23 @@
+@charset "utf-8";body{padding:0;margin:0;font-family:"微軟正黑體","黑体",simhei,sans-serif,"宋体";background-color:#232323;background-image:url(../img/bg.png);background-repeat:repeat-x}.wrap{margin:40px auto 0;height:600px;width:500px}.logo{background:url(../img/logo.png) no-repeat;width:493px;height:207px;margin:0 auto}.logingroup{width:500px;height:493px;background:url(../img/368.png) no-repeat;margin:0 auto;float:left}@media screen and (-webkit-min-device-pixel-ratio:0){.logingroup{border-style:solid;border-width:0;-webkit-border-image:url(../images/shadsow.png) 0 7 stretch;border-image:url(../images/shsadow.png) 0 7 stretch}.wrap{width:514px}}.logingroup input{background-color:transparent;border-color:transparent;width:370px;height:41px;margin-bottom:41px;font-size:28px;color:#FFF;padding-left:50px;border-radius:6px}.textgroup{width:500px;height:133px;margin:68px 0 0 42px}.btn,.btn1,.btn2{width:290px;height:63px;margin:33px auto;cursor:pointer}.btn{background:url(../img/btn.png) no-repeat}.btn1{background:url(../img/btn1.png) no-repeat}.btn2{background:url(../img/btn2.png) no-repeat}.btn1:hover,.btn2:hover,.btn:hover{background-position:0 -63px}.btn1:active,.btn2:active,.btn:active{background-position:0 -126px}
+.list-inline > li {
+  float: left;
+}
+.list-inline > li:not(:last-of-type) {
+  border-right: 1px solid #438edc;
+  margin-right: 10px;
+  padding-right: 10px;
+}
+.list-inline {
+  padding-left: 50px;
+list-style: none;
+float: left;
+color: #438edc;
+}
+.list-inline a {
+  color: #afc8e2;
+  text-decoration: none;
+  transition: all .3s;
+}
+.list-inline a:hover, .list-inline a:focus, .list-inline a:active {
+  color: #fff;
+}
