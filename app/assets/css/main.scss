@@ -25,12 +25,30 @@ div.textgreen{
   color: green;
 }
 
-#leftbar {
+[id=leftbar] {
   width: 300px;
   background-color: #f0f0f0;
   box-shadow: 2px 0px 3px rgba(0%, 0%, 0%, 0.3);
   z-index: 2000;
   min-height: 768px !important;
+  .blue {
+    background-color: #90CAF9;
+  }
+  .help {
+    color: #747474;
+    font-size: 12px;
+    border-top: 1px solid #737373;
+    .help-icon {
+      width: 23px;
+      height: 23px;
+      background-color: #ffe4d8;
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-align: center;
+      padding-top: 3px;
+    }
+  }
 }
 
 #UserInput {
@@ -67,7 +85,7 @@ a:hover {
 
 .logo-text {
   font-size: 36px;
-  margin: 10px;
+  margin: 20px 10px;
   font-weight: bold;
   color: #717171;
 }
@@ -106,10 +124,7 @@ a:hover {
 .row.full {
   margin-right: 0px;
   margin-left: 0px;
-}
-
-#leftbar .blue {
-  background-color: #90CAF9;
+  clear: both;
 }
 
 .btn-next {
@@ -253,10 +268,10 @@ a:hover {
   text-decoration: none;
 }
 
-.btn-left.disabled, .btn-left.disabled:hover, .btn-left.disabled:focus, .btn-next.btn-block.disabled, .btn-next.btn-block.disabled:hover, .btn-next.btn-block.disabled:focus {
-  background-color: gray !important;
-  cursor: not-allowed;
-}
+// .btn-left.disabled, .btn-left.disabled:hover, .btn-left.disabled:focus, .btn-next.btn-block.disabled, .btn-next.btn-block.disabled:hover, .btn-next.btn-block.disabled:focus {
+//   background-color: gray !important;
+//   cursor: not-allowed;
+// }
 
 .navbar-gametype>li>a>div {
   border-bottom: 1px solid #163d5a;
@@ -267,54 +282,57 @@ a:hover {
   border-bottom: 3px solid #fff;
 }
 
-.navbar-default .navbar-mainmenu>li>a:hover {
-  color: #fff;
-}
 
-#navbartop {
+    .navbar-mainmenu>li>a:hover {
+      color: #fff;
+    }
+
+[id=navbartop] {
   border-bottom: 1px solid #205b85;
+  .navbartop-left li {
+    width: 150px;
+    text-align: center;
+    border-right: 1px solid #205b85;
+    a {
+      padding-top: 7px;
+      padding-bottom: 7px;
+      border: 1px solid transparent;
+      &:hover {
+        background-color: #be4a4a;
+        color: #fff;
+        border: 1px solid #fff;
+      }
+    }
+    &.active{
+      a{
+        background-color: #be4a4a;
+        color: #fff;
+        border: 1px solid #fff;
+      }
+    }
+  }
+  .navbartop-right li {
+    border-left: 1px solid #205b85;
+    text-align: center;
+    a {
+      padding-top: 5px;
+      padding-bottom: 5px;
+      padding-right: 10px;
+      padding-left: 10px;
+      &:hover{
+        background-color: #205b85;
+        color: #fff;
+      }
+    }
+    &.active{
+      a{
+        background-color: #205b85;
+        color: #fff;
+      }
+    }
+  }
 }
 
-#navbartop .navbartop-left li {
-  width: 150px;
-  text-align: center;
-  border-right: 1px solid #205b85;
-}
-
-#navbartop .navbartop-right li {
-  border-left: 1px solid #205b85;
-  text-align: center;
-}
-
-.navbar-default #navbartop .navbartop-left li a {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  border: 1px solid transparent;
-}
-
-.navbar-default #navbartop .navbartop-right li a {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
-}
-
-.navbar-default #navbartop .navbartop-left li a:hover {
-  background-color: transparent;
-  color: #fff;
-  border: 1px solid transparent;
-}
-
-.navbar-default #navbartop .navbartop-left li.active a, .navbar-default #navbartop .navbartop-left li.active a:hover {
-  background-color: #be4a4a;
-  color: #fff;
-  border: 1px solid #fff;
-}
-
-.navbar-default #navbartop .navbartop-right li a:hover, .navbar-default #navbartop .navbartop-right li.active a {
-  background-color: #205b85;
-  color: #fff;
-}
 
 .logout {
   width: 90px;
@@ -995,22 +1013,6 @@ a:hover.btn-inside {
   padding: 10px 2px;
 }
 
-#leftbar .help {
-  color: #747474;
-  font-size: 12px;
-  border-top: 1px solid #737373;
-}
-
-#leftbar .help .help-icon {
-  width: 23px;
-  height: 23px;
-  background-color: #ffe4d8;
-  position: absolute;
-  top: 0;
-  left: 0;
-  text-align: center;
-  padding-top: 3px;
-}
 
 .help-colum {
   height: 23px;
@@ -1219,8 +1221,8 @@ textarea {
   background: #ead63e;
   /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefcea+0,f1da36+100;Gold+3D */
   background: #fefcea; /* Old browsers */
-  background: -moz-radial-gradient(center, ellipse cover,  #fefcea 0%, #f1da36 100%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, ellipse cover,  #fefcea 0%,#f1da36 100%); /* Chrome10-25,Safari5.1-6 */
+  background: -moz-radial-gradient(center, farthest-corner,  #fefcea 0%, #f1da36 100%); /* FF3.6-15 */
+  background: -webkit-radial-gradient(center, farthest-corner,  #fefcea 0%,#f1da36 100%); /* Chrome10-25,Safari5.1-6 */
   background: radial-gradient(ellipse at center,  #fefcea 0%,#f1da36 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
   border-radius: 50%;
@@ -1602,7 +1604,7 @@ ul.nav-submenu div {
   border-top: 3px solid #205b85;
 }
 
-.navbar-default .navbar-nav>li>a {
+.navbar-nav>li>a {
   border: 1px solid #163d5a;
 }
 
@@ -1615,19 +1617,19 @@ ul.nav-submenu div {
   margin-right: 5px;
 }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+.navbar-nav>.active>a, .navbar-nav>.active>a:hover, .navbar-nav>.active>a:focus {
   background-color: #be4a4a;
   color: #fff;
   border: 1px solid #fff;
 }
 
-.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+.navbar-nav>.open>a, .navbar-nav>.open>a:hover, .navbar-nav>.open>a:focus {
   color: #fff;
   background-color: transparent;
   border: 1px solid #163d5a;
 }
 
-.navbar-default .navbar-nav>.active.open>a, .navbar-default .navbar-nav>.active.open>a:hover, .navbar-default .navbar-nav>.active.open>a:focus {
+.navbar-nav>.active.open>a, .navbar-nav>.active.open>a:hover, .navbar-nav>.active.open>a:focus {
   color: #fff;
   background-color: #be4a4a;
   border: 1px solid #fff;
@@ -1678,6 +1680,7 @@ ul.nav-submenu div {
 .detail-price {
   color: hsl(0, 73%, 41%);
   font-size: 22px;
+  margin-right: 10px;
 }
 
 .detail-price:hover {

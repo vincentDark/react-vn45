@@ -1,9 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
-import { applyStyles } from '../../core/container/css-module';
-import style from './assets/stylesheets/style.scss';
 
-@applyStyles(style)
+
 export default class Intro extends PureComponent {
   state = {
     activePage: '',
@@ -41,12 +39,9 @@ export default class Intro extends PureComponent {
   render() {
     const { children } = this.props;
     const { activePage, isLegal } = this.state;
-    console.log('activePage = ' + activePage);
     return (
-      <div styleName="container">
-        <div styleName="panel panel-default">
-            {children}
-        </div>
+      <div>
+          {children}
       </div>
     );
   }
