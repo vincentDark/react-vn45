@@ -6769,10 +6769,7 @@ main{
   }
   .flex{
     display: flex;
-    .col-xs-cash{
-      flex: 1;
-    }
-    .col-xs-number-cash-title{
+    .col-xs-cash,.col-xs-number-cash-list,.col-xs-number-cash-title{
       flex: 1;
     }
   }

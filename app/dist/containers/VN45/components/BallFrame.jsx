@@ -3,12 +3,12 @@ import { Style } from '~/core/container';
 import { withRouter } from "react-router-dom";
 
 import BetLeft from "./BetLeft";
-import BallBox from "./BallBox";
+import BallBox from "./BetElement/BallBox";
 
 const BallFrame = ({match}) => {
     let { star, type } = match.params
     let gameType = (type == 'SE') ? '連碰' : '柱碰'
-    
+
     let ball = () => {
         let indents = []
         for (let index = 1; index <= 45; index++) {

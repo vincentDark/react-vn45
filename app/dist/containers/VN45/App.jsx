@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Leftbar from "./components/Leftbar";
-import Header from "./components/Header";
+import Leftbar from "./components/HeaderNav/Leftbar";
+import Header from "./components/HeaderNav/Header";
 import Main from "./components/Main";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 

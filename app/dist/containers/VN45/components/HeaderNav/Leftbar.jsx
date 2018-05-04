@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Style } from '~/core/container';
+
 import InfoWord from "./InfoWord";
 import SmallSubscript from "./SmallSubscript";
 
