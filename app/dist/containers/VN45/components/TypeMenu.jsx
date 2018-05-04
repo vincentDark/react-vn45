@@ -1,10 +1,12 @@
 import React from 'react';
 import { Style } from '~/core/container';
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 
 
-const GameType = ({star, type}) => {
+const GameType = ({match}) => {
+    let { star, type } = match.params
+    
     const typeBtn = [['S','單碰'],['SE','連碰'],['C','柱碰']]
 
     const typeElement = () =>{
@@ -37,4 +39,4 @@ const GameType = ({star, type}) => {
     );
 }
 
-export default Style()(GameType);
+export default withRouter(Style()(GameType));

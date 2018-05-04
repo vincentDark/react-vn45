@@ -1,10 +1,14 @@
 import React from 'react';
 import { Style } from '~/core/container';
+import { withRouter } from "react-router-dom";
 
 import BetLeft from "./BetLeft";
 import BallBox from "./BallBox";
 
-const BallFrame = ({star, type}) => {
+const BallFrame = ({match}) => {
+    let { star, type } = match.params
+    let gameType = (type == 'SE') ? '連碰' : '柱碰'
+    
     let ball = () => {
         let indents = []
         for (let index = 1; index <= 45; index++) {
@@ -16,7 +20,7 @@ const BallFrame = ({star, type}) => {
         <div styleName="col-xs-6 ball">
             <div styleName="nav-content">
                 <div styleName="game-holder text-center">
-                    <div styleName="title2"> { star } 星連碰(請點選要連碰的號碼)</div>
+                    <div styleName="title2"> { star } 星 {gameType} (請點選要連碰的號碼)</div>
                     <div styleName="row full">
                         <BetLeft />
                         <div styleName="col-xs-6 ball-right">
@@ -30,4 +34,4 @@ const BallFrame = ({star, type}) => {
     );
 }
 
-export default Style()(BallFrame);
+export default withRouter(Style()(BallFrame));

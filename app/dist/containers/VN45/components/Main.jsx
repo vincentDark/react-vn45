@@ -4,6 +4,7 @@ import { Redirect } from "react-router-dom";
 
 import TypeMenu from "./TypeMenu";
 import BallFrame from "./BallFrame";
+import SinglePon from "./SinglePon";
 
 class Main extends Component {
     
@@ -36,8 +37,10 @@ class Main extends Component {
                     (isLegal === false) && (<Redirect to={redirectPath}/>)
                 }
                 <div styleName="container">
-                    <TypeMenu star={star} type={type} />
-                    <BallFrame star={star} type={type}/>
+                    <TypeMenu />
+                    {
+                        (type == 'S') ? <SinglePon/> :<BallFrame />
+                    }
                 </div>
             </div>
         );
