@@ -10,7 +10,15 @@ export default class Intro extends PureComponent {
 
   vn45Array = [
     {
-      route: '/vn45',
+      route: 'vn45/1/se',
+      title: 'VN45 Hellow'
+    },
+    {
+      route: '/vn45/1/pon',
+      title: 'VN45 Hellow'
+    },
+    {
+      route: '/vn45/2/pon',
       title: 'VN45 Hellow'
     },
   ];
