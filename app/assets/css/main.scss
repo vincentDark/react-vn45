@@ -7865,6 +7865,7 @@ a:hover.btn-inside {
   padding-right: 0px;
   padding-left: 0px;
   min-height: 505px;
+  height: 100%;
   width: 80px;
   float: left;
 }
@@ -8051,12 +8052,12 @@ textarea {
 .colum-holder {
   overflow-x: auto;
   width: 457px;
-  height: 522px;
+  height: 520px;
 }
 
 .colum-holder>.inside {
   width: auto;
-  height: 505px;
+  height: 100%;
 }
 
 .gamecolum.select {
