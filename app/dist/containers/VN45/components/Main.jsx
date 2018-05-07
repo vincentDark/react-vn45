@@ -36,7 +36,7 @@ class Main extends Component {
                 {
                     (isLegal === false) && (<Redirect to={redirectPath}/>)
                 }
-                <div styleName="container">
+                <div styleName="container" style={ star==1 ? {width:1090} :{}}>
                     <TypeMenu />
                     {
                         (type == 'S') ? <SinglePon/> :<BallFrame />

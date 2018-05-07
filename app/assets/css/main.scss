@@ -8077,22 +8077,6 @@ textarea {
   background-size: contain;
 }
 
-.col5 .m_ball_y{
-  background: #ead63e;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefcea+0,f1da36+100;Gold+3D */
-  background: #fefcea; /* Old browsers */
-  background: -moz-radial-gradient(center, farthest-corner,  #fefcea 0%, #f1da36 100%); /* FF3.6-15 */
-  background: -webkit-radial-gradient(center, farthest-corner,  #fefcea 0%,#f1da36 100%); /* Chrome10-25,Safari5.1-6 */
-  background: radial-gradient(ellipse at center,  #fefcea 0%,#f1da36 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-  border-radius: 50%;
-  position: absolute;
-  left: 2px;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-}
-
 .m_ball_y_hide {
   background-color: red;
   background-repeat: no-repeat;
@@ -8642,27 +8626,66 @@ ul.nav-submenu div {
 .input-group{
   width: 75px;
 }
-.col5 .each-ball .input-group .input-group-addon {
-  width:23px;
-  outline: none;
-  background-color: #f5f5f5;
-  border: none;
-  color: black;
-  font-weight: 800;
-  cursor: pointer;
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
-  user-select: none;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-}
 
-.col5 .each-ball .input-group .input-group-addon:hover{
-  background-color: #fbefae;
-  background:-moz-linear-gradient( center top, #dfdfdf 7%, #ededed 98% );
-  background:-ms-linear-gradient( top, #dfdfdf 7%, #ededed 98% );
-  filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
-  background:-webkit-gradient( linear, left top, left bottom, color-stop(7%, #dfdfdf), color-stop(98%, #ededed) );
-  background-color:#dfdfdf;
+.ball-frame{
+  width: calc(100%/6);
+  float: left;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex: 1;
+  align-content: start;
+  .m_ball_y{
+    background: #ead63e;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fefcea+0,f1da36+100;Gold+3D */
+    background: #fefcea; /* Old browsers */
+    background: -moz-radial-gradient(center, farthest-corner,  #fefcea 0%, #f1da36 100%); /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, farthest-corner,  #fefcea 0%,#f1da36 100%); /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center,  #fefcea 0%,#f1da36 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefcea', endColorstr='#f1da36',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    border-radius: 50%;
+    position: absolute;
+    left: 2px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  .each-ball{
+    width: 20%;
+    .m_ball_y .td_star_C, .price, .input{
+      line-height: 40px;
+    }
+    .input{
+      padding-top: 5px;
+      height: 40px;
+    }
+    .input-group .input-group-addon {
+      width:23px;
+      outline: none;
+      background-color: #f5f5f5;
+      border: none;
+      color: black;
+      font-weight: 800;
+      cursor: pointer;
+      filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#dfdfdf');
+      user-select: none;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+    }
+  }
+  &:hover{
+    background-color: #fbefae;
+    background:-moz-linear-gradient( center top, #dfdfdf 7%, #ededed 98% );
+    background:-ms-linear-gradient( top, #dfdfdf 7%, #ededed 98% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#dfdfdf', endColorstr='#ededed');
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(7%, #dfdfdf), color-stop(98%, #ededed) );
+    background-color:#dfdfdf;
+  }
+  &:active {
+    background-color: #fbefae;
+    transform: translateY(2px);
+  }
+  
 }
 
 .col5 .each-ball .input-group .input-group-addon:active {
@@ -8814,89 +8837,77 @@ ul.nav-submenu div {
   display: block;
 }
 
-#fastchoose .T1{
-  /* padding: 8px;
-  padding-top: 0px; */
-  color: #1e5c85;
-  /* border-bottom: 1px solid; */
-  /* margin-bottom: 25px; */
-  font-size: 18px;
-  position: relative;
-  font-weight: 800;
+[id=fastchoose]{
+  .T1{
+    color: #1e5c85;
+    font-size: 18px;
+    position: relative;
+    font-weight: 800;
+  }
+  .input-group{
+    width: 90%;
+    display: inline-table;
+    .inputname{
+      display: table-cell;
+      width: 50px;
+      white-space: nowrap;
+      vertical-align: middle;
+      text-align: left;
+      font-size: 16px;
+      color: #205b85;
+      text-align: center;
+    }
+    input[type="tel"] {
+      text-align: center!important;
+    }
+    .submittt{
+      color: white;
+      background: #1f587f;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+  }
+  .fastframe{
+    border-top: 3px solid #205b85;
+    border-right: 3px solid #205b85;
+    padding: 20px 3px;
+    &.nodata{
+      background: grey;
+      height: 169px;
+    }
+    &:last-child{
+      border-bottom: none;
+      .input-group .inputname{
+        width: 63px;
+      }
+    }
+    .input-group{
+      margin-bottom: 5px;
+      .whiteblock{
+        display: table-cell;
+        width: 7px;
+      }
+    }
+  }
+  .chooseItem{
+    .btn-link{
+      color: #1e5c85;
+      padding: 10px 0px;
+      border: none;
+      font-weight: 800;
+      font-size: 18px;
+    }
+    .btn-link:hover{
+      background-color: #3876a2;
+      color: #fff;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
 }
 
-/* #fastchoose .T1::after{
-  content: '';
-  display: block;
-  height: 0px;
-  border-bottom: 1px solid;
-  padding: 5.5px;
-  position: absolute;
-  width: 100%;
-  left: 0;
-} */
-
-#fastchoose .input-group{
-  width: 90%;
-  display: inline-table;
-}
-
-#fastchoose .input-group .inputname{
-  display: table-cell;
-  width: 50px;
-  white-space: nowrap;
-  vertical-align: middle;
-  text-align: left;
-  font-size: 16px;
-  color: #205b85;
-  text-align: center;
-}
-
-.input-group input[type="tel"] {
-  text-align: center!important;
-}
-
-#fastchoose .chooseItem .btn-link{
-  color: #1e5c85;
-  /* width: 22px; */
-  padding: 10px 0px;
-  border: none;
-  font-weight: 800;
-  font-size: 18px;
-}
-
-#fastchoose .chooseItem .btn-link:hover{
-  background-color: #3876a2;
-  color: #fff;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-#fastchoose .fastframe{
-  border-top: 3px solid #205b85;
-  padding: 20px 3px;
-}
-
-#fastchoose .fastframe.nodata{
-  background: grey;
-  height: 172px;
-}
-
-#fastchoose .fastframe:last-child{
-  border-bottom: none;
-}
-
-#fastchoose .fastframe:first-child .input-group .inputname{
-  width: 63px;
-}
-
-#fastchoose .fastframe .input-group{
-  margin-bottom: 5px;
-}
-#fastchoose .fastframe .input-group .whiteblock{
-  display: table-cell;
-  width: 7px;
-}
 div#doubleAmount.input-group {
   width: 90%;
 }
@@ -8930,17 +8941,4 @@ div#doubleAmount.input-group {
   float: left;
   width: 32%;
   text-align: right;
-}
-
-.col5 .each-ball .m_ball_y .td_star_C{
-  line-height: 40px;
-}
-
-.col5 .each-ball .price{
-  line-height: 40px;
-}
-
-.col5 .each-ball .input{
-  height: 40px;
-  padding-top: 5px;
 }
