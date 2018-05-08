@@ -1,13 +1,27 @@
-import React from 'react';
-import { Style } from '~/core/container';
+import React, { PureComponent } from 'react';
+import { Style, compose, Dispatch } from '~/core/container';
 
-const BallBox = ({num, choose}) => {
-    return (
-        <div styleName="ballbox" onClick={choose(num)}>
-            <input styleName="getout" type="checkbox" id={`ball${num}`}/>
-            <label styleName="ballini" htmlFor={`ball${num}`}>{num}</label>
-        </div>
-    );
+import { chooseBall } from "../../action";
+
+
+class BallBox extends PureComponent {
+    
+    chooseBall = (num) => () =>{
+        this.props.dispatch(chooseBall(num))
+    }
+    
+    render() {
+        let { num, check } = this.props
+        console.log('num :');
+        console.log(num);
+        return (
+            <div styleName="ballbox" onClick={this.chooseBall(num)}>
+                <input styleName="getout" type="checkbox" id={`ball${num}`} checked={check}/>
+                <label styleName="ballini">{num}</label>
+            </div>
+        );
+    }
 }
 
-export default Style()(BallBox);
+
+export default compose(Dispatch)(Style()(BallBox));
