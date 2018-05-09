@@ -19,13 +19,6 @@ class BallFrame extends Component {
         let { star, type } = match.params
         let gameType = (type == 'SE') ? '連碰' : '柱碰'
 
-        let ball = () => {
-            let indents = []
-            for (let index = 1; index <= 45; index++) {
-                indents.push(<BallBox num={index}  key={`ball${index}`} check={storeData.includes(index)}/>)
-            }
-            return indents;
-        }
         return (
             <div styleName="col-xs-6 ball">
                 <div styleName="nav-content">
@@ -34,7 +27,13 @@ class BallFrame extends Component {
                         <div styleName="row full">
                             <BetLeft />
                             <div styleName="col-xs-6 ball-right">
-                                { ball() }
+                                {
+                                    Array(45).fill().map((item,i)=>{
+                                        return(
+                                            <BallBox num={i+1}  key={`ball${i+1}`} check={storeData.includes(i+1)}/>
+                                        )
+                                    })
+                                }
                                 <button type="reset" styleName="btn-reset" style={{outline: 'none'}} onClick={this.clearAll}>清除</button>
                             </div>
                         </div>
