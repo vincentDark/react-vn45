@@ -28,12 +28,12 @@ export default function(state = [], action) {
             let random
             let choose = 0
             let newRandomState = []
-            // while (choose != amount) {
-            //     random = ((Math.random()*(45 - choose)) >>> 0) + choose
-            //     newRandomState.push(allNumber[random]);
-            //     [allNumber[choose], allNumber[random]] = [allNumber[random], allNumber[choose]]
-            //     choose++
-            // }
+            while (choose != amount) {
+                random = ((Math.random()*(45 - choose)) >>> 0) + choose
+                newRandomState.push(allNumber[random]);
+                [allNumber[choose], allNumber[random]] = [allNumber[random], allNumber[choose]]
+                choose++
+            }
             return newRandomState
             break;
 

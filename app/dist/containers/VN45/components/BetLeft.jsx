@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Style, compose, Dispatch } from '~/core/container';
 import { withRouter } from "react-router-dom";
+import { fastChoose, chooseBall } from "../action";
 
-import { fastChoose, chooseBall, randomChoose } from "../action";
+import RandomFrame from './BetElement/RandomFrame';
 
 class BetLeft extends Component {
 
@@ -14,50 +15,16 @@ class BetLeft extends Component {
         this.props.dispatch(chooseBall(num))
     }
 
-    randomChoose = (amount) => () =>{
-        console.log('amount = ' + amount);
-        this.props.dispatch(randomChoose(amount))
-    }
-
     render() {
-        let {match, location, history} = this.props
+        let { match } = this.props
         let { type } = match.params
-        let ballNumber,ballAmount
-        let disabled = (type == 'C') 
-        let randomChooseFrame = () => {
-            if (disabled) {
-                return (
-                    <div styleName="ball-item disabled"></div>
-                )
-            }else{
-                return (
-                    <div styleName="ball-item">
-                        <input type="text" 
-                            styleName="form-control text-center" 
-                            placeholder="請輸入數量" 
-                            ref={el => {ballAmount = el}}
-                            onKeyUp={ e => {
-                                    ballAmount.value = +ballAmount.value.replace(/\D/g,'')
-                                    if ( ballAmount.value == 0 ){
-                                        ballAmount.value = ''
-                                    }else if ( ballAmount.value > 45) {
-                                        ballAmount.value = ballAmount.value/10 >>> 0
-                                    }
-                                }
-                            }
-                        />
-                        <a styleName="btn-add btn-block" 
-                            style={{ margin: 0 }} 
-                            onClick={ this.randomChoose(this.ballAmount.value) }
-                        >自動選號</a>
-                    </div>
-                )
-            }
-            
-        }
+        let ballNumber
+
         return (
             <div styleName="col-xs-6 ball-left">
-                { randomChooseFrame() }
+                {
+                    type == 'c' ? <div styleName="ball-item disabled"></div> : <RandomFrame />
+                }
                 <div styleName="ball-item">
                     <h4>號碼</h4>
                     <input type="text" 
