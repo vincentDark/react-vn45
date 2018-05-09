@@ -12,11 +12,9 @@ class BallBox extends PureComponent {
     
     render() {
         let { num, check } = this.props
-        console.log('num :');
-        console.log(num);
         return (
             <div styleName="ballbox" onClick={this.chooseBall(num)}>
-                <input styleName="getout" type="checkbox" id={`ball${num}`} checked={check}/>
+                <input styleName="getout" type="checkbox" id={`ball${num}`} checked={check} readOnly/>
                 <label styleName="ballini">{num}</label>
             </div>
         );
