@@ -1,9 +1,10 @@
 import view from "./App";
-import Reducer from "./reducer";
+import BallChecked from "./reducer/CheckedBall";
 
 export default {
     reducer:{
-        ballChecked: Reducer
+        ballChecked: BallChecked,
+        open: BallChecked
     },
     router: [{
         path: '/vn45/:star/:type',
