@@ -2,19 +2,24 @@ import React, { Component } from 'react';
 import { Style } from '~/core/container';
 
 class InputNum extends Component {
+
     state = {  }
     render() {
-        let {refsName, next} = this.props
-        console.log('refsName = ' + refsName);
+        let { setRef, stepNext} = this.props
         return (
             <div styleName="col-xs-number">
                 <h4>號碼</h4>
                 <input type="text" 
                     styleName="form-control text-center"
-                    ref={el => { this.refsName = el }}
+                    ref={setRef}
                     onKeyUp={e => {
-                        console.log(this.refsName)
-                        this[next].focus()
+                        e.target.value = e.target.value.replace(/\D/g,'')
+                        while (e.target.value.length > 2) {
+                            e.target.value = e.target.value/10 >>> 0
+                        }
+                        if(e.target.value.length == 2 || (e.target.value.trim() && e.key === 'Enter')) {
+                            stepNext()
+                        }
                     }}
                 />
             </div>
