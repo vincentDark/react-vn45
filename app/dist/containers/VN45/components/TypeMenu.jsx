@@ -22,7 +22,7 @@ const GameType = ({match}) => {
                         active = 'active'
                     }
                     return(
-                        <Link to={`/vn45/${star}/${item[0]}`} styleName ={`btn btn-change btn-tw39 ${active}`} key={item[0]}>{item[1]}</Link>
+                        <Link to={`/vn45/${star}/${item[0]}`} styleName={`btn btn-change btn-tw39 ${active}`} key={item[0]}>{item[1]}</Link>
                     )
                 })
             )

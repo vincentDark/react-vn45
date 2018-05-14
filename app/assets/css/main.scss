@@ -4477,8 +4477,9 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  color: #555;
-  background-color: #e7e7e7;
+  background-color: #be4a4a;
+  color: #fff;
+  border: 1px solid #fff;
 }
 .navbar-default .navbar-nav > .disabled > a,
 .navbar-default .navbar-nav > .disabled > a:hover,
@@ -7046,9 +7047,9 @@ a:hover {
 }
 
 
-    .navbar-mainmenu>li>a:hover {
-      color: #fff;
-    }
+.navbar-mainmenu>li>a:hover {
+  color: #fff;
+}
 
 [id=navbartop] {
   border-bottom: 1px solid #205b85;
@@ -7939,34 +7940,34 @@ textarea {
   resize: none;
 }
 
-#history tbody td {
+[id=history] tbody td {
   padding: 10px;
 }
 
-#report-ball tbody td {
+.report-ball tbody td {
   padding: 10px;
   text-align: center;
 }
 
-#report-ball .no {
+.report-ball .no {
   width: 100px;
 }
 
-#report-ball .week {
+.report-ball .week {
   width: 60px;
 }
 
-#report-ball .date {
+.report-ball .date {
   width: 200px;
 }
 
-#report-ball .ball {
+.report-ball .ball {
   width: 39px;
   height: 39px;
   padding: 0;
 }
 
-#report-ball .ball .td_star_C {
+.report-ball .ball .td_star_C {
   line-height: 43px;
   font-size: 18px;
 }
@@ -7975,55 +7976,55 @@ textarea {
   font-size: 16px;
 }
 
-#report-order thead td {
+.report-order thead td {
   padding: 3px;
 }
 
-#report-bill-history tbody td {
+.report-bill-history tbody td {
   padding: 10px;
 }
 
-#report-order tbody td, #report-bill-history tbody td {
+.report-order tbody td, .report-bill-history tbody td {
   text-align: center;
 }
 
-#report-order tbody td.text-left {
+.report-order tbody td.text-left {
   text-align: left;
 }
 
-#report-order tbody td.text-right, #report-bill-history tbody td.text-right {
+.report-order tbody td.text-right, .report-bill-history tbody td.text-right {
   text-align: right;
 }
 
-#report-order tbody td.recepit {
+.report-order tbody td.recepit {
   font-size: 16px;
   padding: 3px;
 }
 
-#report-order tbody td.color {
+.report-order tbody td.color {
   background-color: #fffff2;
   color: #163e5a;
 }
 
-#report-order tbody tr.disabled td, #report-order tbody tr.disabled td.color {
+.report-order tbody tr.disabled td, .report-order tbody tr.disabled td.color {
   background-color: gray;
   color: #636363;
 }
 
-#report-order tbody tr.total {
+.report-order tbody tr.total {
   border-top: 3px solid #205b85;
   color: #163e5a;
 }
 
-#report-order tbody tr.total:not(:last-of-type) {
+.report-order tbody tr.total:not(:last-of-type) {
   border-bottom: 3px solid #205b85;
 }
 
-#report-order tbody tr.total td {
+.report-order tbody tr.total td {
   padding: 10px;
 }
 
-#report-bill-history tbody tr.total {
+.report-bill-history tbody tr.total {
   border-top: 3px solid #205b85;
   color: #163e5a;
   background-color: #ffc7c2;
@@ -8035,17 +8036,17 @@ textarea {
   color: #1f5b85;
 }
 
-#report-bill-history tbody tr:hover {
+.report-bill-history tbody tr:hover {
   background-color: #fff;
   cursor: pointer;
 }
 
-#report-bill-history tbody tr.total:hover {
+.report-bill-history tbody tr.total:hover {
   background-color: #ffc7c2;
   cursor: default;
 }
 
-#report-order tbody tr.only-one td {
+.report-order tbody tr.only-one td {
   padding: 10px;
 }
 
@@ -8184,7 +8185,7 @@ ul.nav-submenu div {
   margin-top: 4px;
 }
 
-.content-holder #report-order tr.order-no>td {
+.content-holder .report-order tr.order-no>td {
   text-align: left;
   color: #163e5a;
   padding: 10px;
@@ -8212,26 +8213,26 @@ ul.nav-submenu div {
   font-size: 80px;
 }
 
-#rule .ball .td_star_C {
+.rule .ball .td_star_C {
   line-height: 50px;
   font-size: 20px;
 }
 
-#rule .ball {
+.rule .ball {
   width: 50px;
   height: 50px;
   padding: 0;
 }
 
-#rule tbody td {
+.rule tbody td {
   padding: 10px;
 }
 
-#rule tbody td.main-title {
+.rule tbody td.main-title {
   padding: 3px 10px;
 }
 
-#rule tbody td.sm {
+.rule tbody td.sm {
   padding: 3px 0;
   height: 20px;
 }
@@ -8533,7 +8534,7 @@ ul.nav-submenu div {
   font-size: 22px;
 }
 
-#report-ball tbody {
+.report-ball tbody {
   background-color: #fff;
 }
 

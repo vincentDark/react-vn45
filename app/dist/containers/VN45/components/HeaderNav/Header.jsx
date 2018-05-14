@@ -43,19 +43,19 @@ const Header = ({children, location}) => {
                             <li><Link to={`/vn45/4/${type}`}><div id="S4" styleName={(hrefContent[2] == 4) ? 'active' : null} ><i styleName="fa fa-star"></i>4星</div></Link></li>
                         </ul>
                         <ul styleName="nav navbar-nav navbar-right navbar-mainmenu">
-                        <li id="menu1"><a href="../report/report_ball.php?type=VN45"><i styleName="fa fa-certificate"></i>開球結果</a></li>
-                        <li id="menu2"><a href="../report/report_order.php?type=VN45"><i styleName="fa fa-file-text-o"></i>下注明細</a></li>
-                        <li id="menu3"><a href="../report/report_bill_list.php"><i styleName="fa fa-area-chart"></i>總帳</a></li>
-                        <li id="menu4"><a href="../report/report_bill_history.php?type=VN45this"><i styleName="fa fa-bar-chart"></i>歷史總帳</a></li>
-                        <li id="menu5" styleName="dropdown">
-                            <a href="#" styleName="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i styleName="fa fa-cogs"></i>系統相關</a>
-                            <ul styleName="dropdown-menu">
-                            <li><a href="../mem/mem_detail.php">個人資料</a></li>
-                            <li><a href="../notice/notice_history.php">歷史公告</a></li>
-                            <li><a href="../notice/notice_rule.php">規則說明</a></li>
-                            <li><a href="../mem/mem_contact.php">聯絡我們</a></li>
-                            </ul>
-                        </li>
+                            <li id="menu1" styleName={(hrefContent[1] == 'open-ball') ? 'active' : null} ><Link to='/open-ball'><i styleName="fa fa-certificate"></i>開球結果</Link></li>
+                            <li id="menu2" styleName={(hrefContent[1] == 'bet-order') ? 'active' : null} ><Link to='/bet-order'><i styleName="fa fa-file-text-o"></i>下注明細</Link></li>
+                            <li id="menu3" styleName={(hrefContent[1] == 'total-bet') ? 'active' : null} ><Link to='/total-bet'><i styleName="fa fa-area-chart"></i>總帳</Link></li>
+                            <li id="menu4" styleName={(hrefContent[1] == 'order-history') ? 'active' : null} ><Link to='/order-history'><i styleName="fa fa-bar-chart"></i>歷史總帳</Link></li>
+                            <li id="menu5" styleName={(hrefContent[1] == 'page') ? 'dropdown active' : 'dropdown'} >
+                                <a href="#" styleName="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i styleName="fa fa-cogs"></i>系統相關</a>
+                                <ul styleName="dropdown-menu">
+                                    <li><Link to='/page/member-info'>個人資料</Link></li>
+                                    <li><Link to='/page/notice'>歷史公告</Link></li>
+                                    <li><Link to='/page/rule'>規則說明</Link></li>
+                                    <li><Link to='/page/contact'>聯絡我們</Link></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
