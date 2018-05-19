@@ -194,4 +194,4 @@ class SPonOneStar extends Component {
 }
 
 
-export default compose(Dispatch, Store('ballChecked'))(Style()(SPonOneStar));
+export default compose(Dispatch, Store('BallsState.CheckedBall'))(Style()(SPonOneStar));

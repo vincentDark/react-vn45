@@ -1,10 +1,9 @@
 import view from "./App";
-import BallChecked from "./reducer/CheckedBall";
+import BallsState from "./reducer/BallsState";
 
 export default {
     reducer:{
-        ballChecked: BallChecked,
-        open: BallChecked
+        BallsState: BallsState
     },
     router: [
         {

@@ -1,19 +1,22 @@
 import React, { PureComponent } from 'react';
 import { Style, compose, Dispatch } from '~/core/container';
+import { withRouter } from "react-router-dom";
 
 import { chooseBall } from "../../action";
 
 
 class BallBox extends PureComponent {
     
-    chooseBall = (num) => () =>{
-        this.props.dispatch(chooseBall(num))
+    
+    chooseBall = (num, type) => () =>{
+        this.props.dispatch(chooseBall(num, num, 1, type))
     }
     
     render() {
         let { num, check } = this.props
+        let { type } = this.props.match.params
         return (
-            <div styleName="ballbox" onClick={this.chooseBall(num)}>
+            <div styleName="ballbox" onClick={this.chooseBall(num, type)}>
                 <input styleName="getout" type="checkbox" id={`ball${num}`} checked={check} readOnly/>
                 <label styleName="ballini">{num}</label>
             </div>
@@ -22,4 +25,4 @@ class BallBox extends PureComponent {
 }
 
 
-export default compose(Dispatch)(Style()(BallBox));
+export default compose(Dispatch)(withRouter(Style()(BallBox)));

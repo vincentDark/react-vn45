@@ -8052,12 +8052,12 @@ textarea {
 
 .colum-holder {
   overflow-x: auto;
-  width: 457px;
+  // width: calc(100% - 80px);
   height: 520px;
 }
 
 .colum-holder>.inside {
-  width: auto;
+  width: max-content;
   height: 100%;
 }
 

@@ -1,9 +1,4 @@
-export function chooseBall(ball) {
-    return{
-        type: 'CHOOSE_BALL',
-        ball: ball,
-    }
-}
+// 左邊球號
 
 export function clearAllBall() {
     return {
@@ -11,12 +6,13 @@ export function clearAllBall() {
     }
 }
 
-export function fastChoose(star, end, jump) {
+export function chooseBall(star, end, jump, type = 'SE') {
     return{
-        type: 'FAST_CHOOSE',
+        type: 'CHOOSE_BALL',
         star: star,
         end: end,
-        jump: jump
+        jump: jump,
+        gameType: type
     }
 }
 
@@ -24,5 +20,13 @@ export function randomChoose(amount) {
     return{
         type: 'RANDOM_BALL',
         amount: amount,
+    }
+}
+
+// 柱碰部分
+export function chooseColumn(column) {
+    return{
+        type: 'CHOOSE_COLUMN',
+        column: column,
     }
 }

@@ -44,4 +44,4 @@ class BallFrame extends Component {
     }
 }
 
-export default compose(Dispatch, Store('ballChecked'))(withRouter(Style()(BallFrame)));
+export default compose(Dispatch, Store('BallsState.CheckedBall'))(withRouter(Style()(BallFrame)));
