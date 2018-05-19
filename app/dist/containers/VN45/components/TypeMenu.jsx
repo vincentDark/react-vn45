@@ -1,14 +1,19 @@
 import React from 'react';
-import { Style } from '~/core/container';
+import { Style, compose, Dispatch } from '~/core/container';
 import { Link, withRouter } from "react-router-dom";
 
+import { clearAllBall } from "../action";
 
 
-const GameType = ({match}) => {
+const GameType = ({match ,dispatch}) => {
     let { star, type } = match.params
     
     const typeBtn = [['S','單碰'],['SE','連碰'],['C','柱碰']]
 
+    const clearAll = () => {
+        dispatch(clearAllBall())
+    }
+    
     const typeElement = () =>{
         if (star == 1) {
             return (
@@ -22,7 +27,7 @@ const GameType = ({match}) => {
                         active = 'active'
                     }
                     return(
-                        <Link to={`/vn45/${star}/${item[0]}`} styleName={`btn btn-change btn-tw39 ${active}`} key={item[0]}>{item[1]}</Link>
+                        <Link to={`/vn45/${star}/${item[0]}`} styleName={`btn btn-change btn-tw39 ${active}`} key={item[0]} onClick={clearAll}>{item[1]}</Link>
                     )
                 })
             )
@@ -39,4 +44,4 @@ const GameType = ({match}) => {
     );
 }
 
-export default withRouter(Style()(GameType));
+export default compose(Dispatch)(withRouter(Style()(GameType)));
