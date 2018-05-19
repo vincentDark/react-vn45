@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Style, compose, Dispatch, Store } from '~/core/container';
 require('@/css/ed-style.css')
 
-import { chooseBall, clearAllBall, fastChoose } from "../../action";
+import { chooseBall, clearAllBall } from "../../action";
 
 class SPonOneStar extends Component {
     
@@ -14,7 +14,7 @@ class SPonOneStar extends Component {
 
     chooseBall = (num) => () =>{
         this.refs[`inputRefs${num}`].focus()
-        this.props.dispatch(chooseBall(num))
+        this.props.dispatch(chooseBall(num, num, 1))
     }
 
     clearAll = () => {
@@ -22,7 +22,7 @@ class SPonOneStar extends Component {
     }
 
     fastChooseBall = (star,end,jump) => () =>{
-        this.props.dispatch(fastChoose(star,end,jump))
+        this.props.dispatch(chooseBall(star,end,jump))
     }
 
     handleInput = (index) => (e) => {
