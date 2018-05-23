@@ -4,7 +4,6 @@ import { Link, withRouter } from "react-router-dom";
 
 const Header = ({children, location}) => {
     const starName = ['1', '2', '3', '4']
-
     let href = location.pathname
     let hrefContent = href.split('/')
     let type = 'SE'

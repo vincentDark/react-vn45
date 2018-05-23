@@ -1,13 +1,20 @@
 @charset "utf-8";
 /* CSS Document */
 
-html {
+
+
+html,body {
 	height: 100%;
 	width: auto;
 	padding: 0;
 	margin: 0;
 }
-body {
+
+[id='login-page']{
+	min-height: 100vh;
+	*::before,*::after,*{
+		box-sizing: initial;
+	}
 	padding: 0;
 	margin: 0;
 	font-family: 微軟正黑體, 新細明體, 細明體, Arial, "Arial Black";
@@ -18,6 +25,7 @@ body {
 	background-position: center;
 	background-size: cover;
 }
+
 .wrap {
 	margin: 0 auto;
 	padding: 0;
@@ -71,7 +79,7 @@ transform: scale(1);
 	opacity: 1;
 	max-height: inherit;
 }
-*[class^="option-opt"] {
+*[id^="option-opt"] {
 	position: relative;
 	display: block;
 	margin: 0 auto;
@@ -87,12 +95,12 @@ transform: scale(1);
 	min-height: 32px;
 	line-height: 32px;
 }
-.toggle-box *[class^="option-opt"] {
+.toggle-box *[id^="option-opt"] {
 	border-color: transparent;
 	background-color: rgba(45, 100, 160, 1);
 }
-.toggle-box *[class^="option-opt"]:hover {
-	background-color: rgba(100, 160, 230, 1);
+.toggle-box *[id^="option-opt"]:hover {
+	background-color: rgba(100, 160, 230, 1) !important; 
 }
 /*
 // .option-opt0[data-optid="opt1"] + .toggle-box .option-opt1 {display: none;}
@@ -153,13 +161,13 @@ transform: scale(1);
 	background-color: rgba(0,0,0,0.25);
 }
 
-/*.logingroup *[class^="option-opt"] {height: 41px;}*/
-.logingroup *[class^="option-opt"] .option-text {
+/*.logingroup *[id^="option-opt"] {height: 41px;}*/
+.logingroup *[id^="option-opt"] .option-text {
 	padding-left: 40px;
 	font-family: 微軟正黑體, 新細明體, 細明體, Arial, "Arial Black";
 	font-size: 1.4em;
 }
-.logingroup *[class^="option-opt"] img.flag {
+.logingroup *[id^="option-opt"] img.flag {
 	position: absolute;
 	top: 9px;
 	left: 10px;
@@ -168,7 +176,7 @@ transform: scale(1);
 	padding: 0;
 	margin: 0;
 }
-.logingroup *[class^="option-opt"] img.arrow {
+.logingroup *[id^="option-opt"] img.arrow {
 	position: absolute;
 	top: 15px;
 	right: 10px;
@@ -200,6 +208,7 @@ transform: scale(1);
 	padding: 0 0 0 0;
 	margin: 5px 5px 0 0;
 	vertical-align: middle;
+	box-shadow: none;
 }
 .textgroup .toggle-box li img {
 	position: absolute;
@@ -332,7 +341,6 @@ color: rgba(255, 255, 255, 0.65);
 }
 #uLogin .logingroup.logingroup_zh-TW .language a {
 	outline: none; /* for Firefox Google Chrome  */
-	behavior: expression ( this.onFocus=this.blur()); /* for IE */
 	text-decoration: none;
 	color: #FFFFFF;
 	font-size: 18px;

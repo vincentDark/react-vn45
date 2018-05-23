@@ -6,6 +6,7 @@ import { Style } from '~/core/container';
 import Leftbar from "./components/HeaderNav/Leftbar";
 import Header from "./components/HeaderNav/Header";
 import Main from "./components/Main";
+import Frame from "./components/DontWhy";
 import OpenBall from "./otherpage/OpenBall";
 import TotalBet from "./otherpage/TotalBet";
 import BetOrder from "./otherpage/BetOrder";
@@ -14,6 +15,7 @@ import MemberInfo from "./otherpage/MemberInfo";
 import NoticeAll from "./otherpage/NoticeAll";
 import Rule from "./otherpage/Rule";
 import Contact from "./otherpage/Contact";
+import Login from "./otherpage/Login/";
 
 
 
@@ -21,11 +23,12 @@ class App extends Component {
     render() {
         return (
             <MuiThemeProvider>
-                <main>
-                    <Leftbar />
-                    <Router>
-                        <Header>
-                            <Switch>
+                <Router>
+                    <Switch>
+                        <Route exact path="/login" component={Login}/>
+                        <Frame>
+                            <Leftbar />
+                            <Header>
                                 <Route exact path="/vn45/:star/:type" component={Main}/>
                                 <Route exact path="/open-ball" component={OpenBall}/>
                                 <Route exact path="/total-bet" component={TotalBet}/>
@@ -35,12 +38,11 @@ class App extends Component {
                                 <Route exact path="/page/notice" component={NoticeAll}/>
                                 <Route exact path="/page/rule" component={Rule}/>
                                 <Route exact path="/page/contact" component={Contact}/>
-                            </Switch>
-                        </Header>
-                    </Router>
-                </main>
+                            </Header>
+                        </Frame>
+                    </Switch>
+                </Router>
             </MuiThemeProvider>
-
         );
     }
 }

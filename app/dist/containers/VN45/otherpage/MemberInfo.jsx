@@ -47,7 +47,7 @@ const MemberInfo = () => {
                 </div>
                 {
                     Array(4).fill().map((item,index)=>(
-                        <div styleName="content-holder">
+                        <div styleName="content-holder" key={`memberInfo${index}`}>
                             <table style={tableBC}>
                                 <tbody>
                                     <tr>

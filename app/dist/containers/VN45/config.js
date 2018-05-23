@@ -1,11 +1,19 @@
 import view from "./App";
 import BallsState from "./reducer/BallsState";
+import SagaStore from "./reducer/Saga";
+import Saga from './saga';
+
 
 export default {
     reducer:{
-        BallsState: BallsState
+        BallsState: BallsState,
+        saga: SagaStore
     },
     router: [
+        {
+            path: '/login',
+            component: view
+        },
         {
             path: '/vn45/:star/:type',
             component: view
@@ -42,6 +50,7 @@ export default {
             path: '/page/contact',
             component: view
         },
-    ]
+    ],
+    subscribe: Saga
 };
 
