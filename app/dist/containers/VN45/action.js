@@ -33,14 +33,23 @@ export function chooseColumn(column) {
 }
 
 export function fetch() {
-  return fetchAPI('API_USER_LIST', {
+  return fetchAPI('GET_CSRF_TOKEN', {
     url: 'http://sb_w_user.sex/test-csrf'
+  });
+}
+
+export function login(payload, csrf) {
+  return fetchAPI('LOG_IN', {
+    url: 'http://sb_w_user.sex/login',
+    method: 'post',
+    body: payload,
+    csrf: csrf,
   });
 }
 
 export function save(items) {
   return {
-    type: 'SAGA_SAVE',
+    type: 'TOKEN_SAVE',
     payload: {
       items
     }

@@ -1,13 +1,13 @@
 import view from "./App";
 import BallsState from "./reducer/BallsState";
-import SagaStore from "./reducer/Saga";
+import getCsrf from "./reducer/token";
 import Saga from './saga';
 
 
 export default {
     reducer:{
         BallsState: BallsState,
-        saga: SagaStore
+        csrf: getCsrf
     },
     router: [
         {

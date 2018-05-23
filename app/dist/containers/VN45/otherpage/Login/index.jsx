@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Style, compose, Dispatch, Store } from '~/core/container';
-import { fetch } from '../../action';
+import { fetch, login } from '../../action';
 import loginTheme from "@/css/style-new-login.scss";
 
 import Logo from "@/img/NV45-LOGO-300.png";
@@ -17,23 +17,28 @@ class Login extends Component {
         show: false,
         open: false,
     }
+    
+    componentDidMount(){
+        this.props.dispatch(fetch());
+    }
 
     seePWD = () => {
         this.setState(preState => ({ show: !preState.show }));
     }
 
     enter = () => {
-        let name = this.refs.name.value
+        let MEM_ID = this.refs.name.value
         let password = this.refs.password.value
-        this.props.dispatch(fetch());
-        return;
         console.log('this.refs :');
         console.log(this.refs);
-        if ( ! (name.trim() && password.trim()) ) {
+        if ( ! (MEM_ID.trim() && password.trim()) ) {
             this.setState({open: true});
             return;
         }
-        console.log(name);
+        let _token = this.props.storeData
+        let payload = { MEM_ID, password, _token }
+        this.props.dispatch(login(JSON.stringify(payload),_token));
+        console.log(MEM_ID);
         console.log(password);
     }
 
@@ -82,6 +87,9 @@ class Login extends Component {
                                     ref="password"
                                     onKeyUp={e => {
                                         e.target.value = e.target.value.replace(/[\W]/g,'')
+                                        if(e.target.value.trim() && e.key === 'Enter') {
+                                            this.enter()
+                                        }
                                     }}
                                 />
                             </div>
@@ -124,4 +132,4 @@ class Login extends Component {
     }
 }
 
-export default compose(Dispatch,Store('saga'))(Style(loginTheme)(Login));
+export default compose(Dispatch,Store('csrf'))(Style(loginTheme)(Login));
