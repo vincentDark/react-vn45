@@ -38,12 +38,11 @@ export function fetch() {
   });
 }
 
-export function login(payload, csrf) {
+export function login(payload) {
   return fetchAPI('LOG_IN', {
     url: 'http://sb_w_user.sex/login',
     method: 'post',
     body: payload,
-    csrf: csrf,
   });
 }
 

@@ -2,7 +2,7 @@ import { toUpper, toLower } from 'ramda';
 
 module.exports = (apiCode, opts) => {
   /* 撈出指定的 request */
-  const { method = 'get', url, body = null, middleware = [], csrf = '' } = opts;
+  const { method = 'get', url, body = null, middleware = []} = opts;
 
   const upperMethod = toUpper(method);
   /* 產出 saga action 格式 */
@@ -13,7 +13,8 @@ module.exports = (apiCode, opts) => {
       stream: fetch.bind(null, url, {
         headers: {
           Accept: 'application/json',
-          'X-CSRF-TOKEN': csrf,
+          'X-CSRF-TOKEN': window.csrf,
+          'Content-Type': 'application/json',
         },
         mode: 'cors',
         credentials: 'include',

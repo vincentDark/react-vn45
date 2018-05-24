@@ -37,7 +37,7 @@ class Login extends Component {
         }
         let _token = this.props.storeData
         let payload = { MEM_ID, password, _token }
-        this.props.dispatch(login(JSON.stringify(payload),_token));
+        this.props.dispatch(login(JSON.stringify(payload)));
         console.log(MEM_ID);
         console.log(password);
     }
@@ -53,6 +53,7 @@ class Login extends Component {
     render() {
         console.log('this.props :');
         console.log(this.props);
+        window.csrf = this.props.storeData
         const actions = [
             <FlatButton
               label="確認"
