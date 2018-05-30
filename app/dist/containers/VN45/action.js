@@ -34,23 +34,32 @@ export function chooseColumn(column) {
 
 export function fetch() {
   return fetchAPI('GET_CSRF_TOKEN', {
-    url: 'http://sb_w_user.sex/test-csrf'
+    url: 'test-csrf'
   });
 }
 
 export function login(payload) {
   return fetchAPI('LOG_IN', {
-    url: 'http://sb_w_user.sex/login',
+    url: 'login',
     method: 'post',
     body: payload,
   });
 }
 
-export function save(items) {
+export function saveToken(items) {
   return {
     type: 'TOKEN_SAVE',
     payload: {
-      items
+      ...items
+    }
+  };
+}
+
+export function saveAuth(items) {
+  return {
+    type: 'AUTH_SAVE',
+    payload: {
+      ...items
     }
   };
 }

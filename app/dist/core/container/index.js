@@ -1,9 +1,7 @@
-/* @flow */
-import Dispatch from './hoc/dispatch';
-import I18n from './hoc/i18n';
-import Store from './hoc/store';
-import { PureStore } from './hoc/store';
-import Style from './hoc/style';
-import { compose } from 'redux';
-
-export { compose, Dispatch, I18n, PureStore, Store, Style };
+export { compose } from 'redux';
+export { default as applyStyles } from './apply-styles.js';
+export { default as withDispatch } from './with-dispatch.js';
+export { default as withI18n } from './with-i18n.js';
+export { default as withPureStore } from './with-pure-store.js';
+export { default as withStore } from './with-store.js';
+export { default as withStyle } from './with-style.js';

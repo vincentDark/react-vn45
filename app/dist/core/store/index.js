@@ -1,4 +1,3 @@
-/* @flow */
 /* redux */
 import { createStore, applyMiddleware, compose } from 'redux';
 
@@ -6,52 +5,73 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import createHistory from 'history/createBrowserHistory';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { ConnectedRouter, routerMiddleware } from 'react-router-redux';
-
-/* 系統設定 */
-import { RootReducer, RootRoutes } from '../roots';
-import { promiseMiddleware, multiDispatchMiddleware } from './middleware';
-import { BASE_PATH } from 'Config';
+/* helper */
+import { values } from 'ramda';
 
 /* saga */
 import createSagaMiddleware from 'redux-saga';
-import sagaFlow from '../saga';
 
-/* saga */
+/* 系統設定 */
+import { rootReducer } from '../roots';
+import { BASE_PATH, ENABLE_DEV_TOOLS } from 'Config';
+
+/* middleware */
+import * as storeMiddleware from './middleware';
+
 const sagaMiddleware = createSagaMiddleware();
+
+/* find storeMiddleware */
+const {
+  saga: sagaWatcherMiddleware,
+  promise: promiseMiddleware,
+  multipleActions: multipleActionsMiddleware,
+  ...othersMiddleware
+} = storeMiddleware;
 
 /**
  * Router setting
  */
 const history = createHistory({ basename: BASE_PATH });
 const routeMiddleware = routerMiddleware(history);
-let store = {};
-let DevTools = null;
-if (process.env.NODE_ENV === 'development') {
-  DevTools = require('../libraries/devTools');
-  store = createStore(
-    RootReducer,
-    compose(
-      applyMiddleware(
-        routeMiddleware,
-        multiDispatchMiddleware,
-        promiseMiddleware,
-        sagaMiddleware
-      ),
-      DevTools.instrument()
-    )
-  );
-} else {
-  store = createStore(
-    RootReducer,
-    applyMiddleware(
-      routeMiddleware,
-      multiDispatchMiddleware,
-      promiseMiddleware,
-      sagaMiddleware
-    )
-  );
-}
-/* 執行 saga 監聽 */
-sagaMiddleware.run(sagaFlow);
 
-export { store, history, DevTools };
+let DevTools = null;
+
+/* store creator */
+const sagaCreator = {
+  create: (() => {
+    if (ENABLE_DEV_TOOLS) {
+      DevTools = require('../libraries/dev-tools');
+      return () =>
+        createStore(
+          rootReducer,
+          compose(
+            applyMiddleware(
+              routeMiddleware,
+              multipleActionsMiddleware,
+              promiseMiddleware,
+              sagaMiddleware,
+              ...values(othersMiddleware)
+            ),
+            DevTools.instrument()
+          )
+        );
+    } else {
+      return () =>
+        createStore(
+          rootReducer,
+          applyMiddleware(
+            routeMiddleware,
+            multipleActionsMiddleware,
+            promiseMiddleware,
+            sagaMiddleware,
+            ...values(othersMiddleware)
+          )
+        );
+    }
+  })(),
+  run: () => {
+    sagaMiddleware.run(sagaWatcherMiddleware);
+  }
+};
+
+export { sagaCreator, history, DevTools };

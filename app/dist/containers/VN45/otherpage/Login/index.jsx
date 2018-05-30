@@ -35,7 +35,7 @@ class Login extends Component {
             this.setState({open: true});
             return;
         }
-        let _token = this.props.storeData
+        let _token = window.csrf
         let payload = { MEM_ID, password, _token }
         this.props.dispatch(login(JSON.stringify(payload)));
         console.log(MEM_ID);
@@ -51,9 +51,7 @@ class Login extends Component {
     };
     
     render() {
-        console.log('this.props :');
-        console.log(this.props);
-        window.csrf = this.props.storeData
+        window.csrf = this.props.storeData.token
         const actions = [
             <FlatButton
               label="確認"
@@ -133,4 +131,4 @@ class Login extends Component {
     }
 }
 
-export default compose(Dispatch,Store('csrf'))(Style(loginTheme)(Login));
+export default compose(Dispatch,Store('member'))(Style(loginTheme)(Login));
