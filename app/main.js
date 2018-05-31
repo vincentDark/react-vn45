@@ -28,7 +28,7 @@ render(
 
     /* 路由設定 */
     routerIndex: '/login',
-    routerNotFound: '/home',
+    routerNotFound: '/login',
     routerMiddleware: null
   }),
   document.getElementById('container') //定義在`entrance/index.html`中渲染內容的元素

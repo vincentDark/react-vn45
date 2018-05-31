@@ -5,16 +5,24 @@ const PROJECT_NAME = 'React Redux Start Kit';
 const PROJECT_HOST = '127.0.0.1';
 const PROJECT_PORT = 8888;
 
-/* 專案路徑 */
-const PROJECT_PATH = '/';
+/* 路由根目錄 */
+const ROUTE_BASE = '/';
 
-/* 資源路徑 */
-const ASSETS_PATH = 'assets/';
+/* 要引入的共用資源，withStyle 預設樣式，使用逗號區隔 */
+const INCLUDE_ASSETS = 'css';
+
+/* 要打包config.js的資料夾，使用逗號區隔 */
+const BUILD_DIRECTORIES = 'containers';
+
+/* 是否啟用 redux-devtools */
+const ENABLE_DEV_TOOLS = true;
 
 module.exports = {
   PROJECT_NAME,
   PROJECT_HOST,
   PROJECT_PORT,
-  PROJECT_PATH,
-  ASSETS_PATH
+  ROUTE_BASE,
+  INCLUDE_ASSETS,
+  BUILD_DIRECTORIES,
+  ENABLE_DEV_TOOLS
 };

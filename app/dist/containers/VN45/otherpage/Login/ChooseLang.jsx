@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withStyle } from '~/core/container';
 
-import loginTheme from "@/css/style-new-login.scss";
+import loginTheme from "@/css_other/style-new-login.scss";
 
 import icon_arrow_01 from "@/img/icon_arrow_01.png";
 import icon_00 from "@/img/icon_00.png";

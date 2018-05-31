@@ -1,4 +1,4 @@
-// import { fetchAPI } from '~/core/action/effects';
+import fetchAPI from 'ext/action.effects/fetch-api';
 
 // 左邊球號
 export function clearAllBall() {

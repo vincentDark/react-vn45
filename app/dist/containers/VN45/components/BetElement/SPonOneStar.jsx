@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withStyle, compose, withDispatch, withStore } from '~/core/container';
-require('@/css/ed-style.css')
+// require('@/css_other/ed-style.css')
 
 import { chooseBall, clearAllBall } from "../../action";
 

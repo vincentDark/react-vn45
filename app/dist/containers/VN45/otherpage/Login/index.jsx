@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { withStyle, compose, withDispatch, withStore } from '~/core/container';
 import { fetch, login } from '../../action';
-import loginTheme from "@/css/style-new-login.scss";
+import loginTheme from "@/css_other/style-new-login.scss";
 
 import Logo from "@/img/NV45-LOGO-300.png";
 import icon_03 from "@/img/icon_03.png";
