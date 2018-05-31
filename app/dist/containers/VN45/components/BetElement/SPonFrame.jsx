@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 import { withRouter } from "react-router-dom";
 import Dialog from 'material-ui/Dialog';
 import FlatButton from 'material-ui/FlatButton';
@@ -156,8 +156,8 @@ class SPonFrame extends Component {
                             modal={false}
                             open={this.state.open}
                             onRequestClose={this.handleClose}
-                            actionsContainerStyle={{textAlign:'center'}}
-                            contentStyle={{maxWidth: 500,}}
+                            actionsContainerwithStyle={{textAlign:'center'}}
+                            contentwithStyle={{maxWidth: 500,}}
                         >
                             請填寫正確！！
                         </Dialog>
@@ -168,4 +168,4 @@ class SPonFrame extends Component {
     }
 }
 
-export default withRouter(Style()(SPonFrame));
+export default withRouter(withStyle()(SPonFrame));

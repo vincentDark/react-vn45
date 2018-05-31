@@ -1,12 +1,12 @@
 /* @flow */
 import CSSModules from 'react-css-modules';
-import Bootstrap from '@/css/bootstrap.min.css';
-import FontAwesome from '@/css/font-awesome.min.css';
-import Shared from '@/css/shared.css';
+import FontAwesome from '@/css/font-awesome.css';
+import Main from '@/css/main.scss';
+import EdStyle from '@/css/ed-style.css';
 
 export const styleCombine = (...styles: Array<Object>) => ({
-  ...Bootstrap,
   ...FontAwesome,
-  ...Shared,
+  ...Main,
+  ...EdStyle,
   ...styles.reduce((obj, style) => ({ ...obj, ...style }), {})
 });

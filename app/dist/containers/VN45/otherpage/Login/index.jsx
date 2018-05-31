@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style, compose, Dispatch, Store } from '~/core/container';
+import { withStyle, compose, withDispatch, withStore } from '~/core/container';
 import { fetch, login } from '../../action';
 import loginTheme from "@/css/style-new-login.scss";
 
@@ -120,8 +120,8 @@ class Login extends Component {
                     modal={false}
                     open={this.state.open}
                     onRequestClose={this.handleClose}
-                    actionsContainerStyle={{textAlign:'center'}}
-                    contentStyle={{maxWidth: 500,}}
+                    actionsContainerwithStyle={{textAlign:'center'}}
+                    contentwithStyle={{maxWidth: 500,}}
                 >
                     請輸入帳號密碼!
                 </Dialog>
@@ -131,4 +131,4 @@ class Login extends Component {
     }
 }
 
-export default compose(Dispatch,Store('member'))(Style(loginTheme)(Login));
+export default compose(withDispatch,withStore('member'))(withStyle(loginTheme)(Login));

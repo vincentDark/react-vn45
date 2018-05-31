@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style, compose, Dispatch, Store } from '~/core/container';
+import { withStyle, compose, withDispatch, withStore } from '~/core/container';
 import { withRouter } from "react-router-dom";
 
 import { chooseColumn } from "../action";
@@ -50,4 +50,4 @@ class CPonFrame extends Component {
     }
 }
 
-export default compose(Dispatch,Store('BallsState'))(withRouter(Style()(CPonFrame)));
+export default compose(withDispatch,withStore('BallsState'))(withRouter(withStyle()(CPonFrame)));

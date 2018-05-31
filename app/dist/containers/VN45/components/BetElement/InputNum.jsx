@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 
 class InputNum extends Component {
 
@@ -28,4 +28,4 @@ class InputNum extends Component {
 }
 
 
-export default Style()(InputNum);
+export default withStyle()(InputNum);

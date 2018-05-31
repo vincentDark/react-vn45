@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style, compose, Dispatch, Store } from '~/core/container';
+import { withStyle, compose, withDispatch, withStore } from '~/core/container';
 require('@/css/ed-style.css')
 
 import { chooseBall, clearAllBall } from "../../action";
@@ -194,4 +194,4 @@ class SPonOneStar extends Component {
 }
 
 
-export default compose(Dispatch, Store('BallsState.CheckedBall'))(Style()(SPonOneStar));
+export default compose(withDispatch, withStore('BallsState.CheckedBall'))(withStyle()(SPonOneStar));

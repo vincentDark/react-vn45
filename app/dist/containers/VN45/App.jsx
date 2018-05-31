@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import { Store } from '~/core/container';
+import { withStore } from '~/core/container';
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 
 import Leftbar from "./components/HeaderNav/Leftbar";
@@ -98,4 +98,4 @@ class App extends Component {
     }
 }
 
-export default Store('member.auth')(App);
+export default withStore('member.auth')(App);

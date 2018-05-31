@@ -1,5 +1,5 @@
 import React from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 
 
 const OpenBall = () => {
@@ -74,4 +74,4 @@ const OpenBall = () => {
     );
 }
 
-export default Style()(OpenBall);
+export default withStyle()(OpenBall);

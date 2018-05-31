@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 
 const OrderHistory = () => {
     return (
@@ -60,4 +60,4 @@ const OrderHistory = () => {
     );
 }
 
-export default Style()(OrderHistory);
+export default withStyle()(OrderHistory);

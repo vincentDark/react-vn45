@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 
 const Rule = () => {
     return (
@@ -1323,4 +1323,4 @@ const Rule = () => {
     );
 }
 
-export default Style()(Rule);
+export default withStyle()(Rule);

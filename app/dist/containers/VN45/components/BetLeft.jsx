@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style, compose, Dispatch } from '~/core/container';
+import { withStyle, compose, withDispatch } from '~/core/container';
 import { withRouter } from "react-router-dom";
 import { chooseBall } from "../action";
 
@@ -80,4 +80,4 @@ class BetLeft extends Component {
     }
 }
 
-export default compose(Dispatch)(withRouter(Style()(BetLeft)));
+export default compose(withDispatch)(withRouter(withStyle()(BetLeft)));

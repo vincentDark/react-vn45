@@ -1,4 +1,4 @@
-const originStore = {
+const originwithStyle = {
     auth: false,
     fetched: false,
     token: '',
@@ -19,7 +19,7 @@ const originStore = {
     }
   };
 
-export default function (store = originStore, action) {
+export default function (store = originwithStyle, action) {
     const { type } = action;
     switch (type) {
         case 'TOKEN_SAVE':

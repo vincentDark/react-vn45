@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 
 const BetOrder = () => {
     return (
@@ -77,4 +77,4 @@ const BetOrder = () => {
     );
 }
 
-export default Style()(BetOrder);
+export default withStyle()(BetOrder);

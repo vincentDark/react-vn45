@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 
 const MemberInfo = () => {
-    let inputStyle = {
+    let inputwithStyle = {
         width: 180,
         marginBottom: 5,
         backgroundColor: '#fff',
@@ -34,9 +34,9 @@ const MemberInfo = () => {
                                 <td colSpan="2">
                                     <button styleName="btn-clearall btn-block" style={{width: 180}} data-toggle="collapse" data-target="#gateway">修改密碼</button>
                                     <form id="gateway" styleName="collapse in" style={{marginTop: 5}}>
-                                        <input type="password" styleName="form-control" style={inputStyle} placeholder="請輸入舊密碼" name="oldpw" />
-                                        <input type="password" styleName="form-control" style={inputStyle} placeholder="請輸入新密碼" name="pw1" />
-                                        <input type="password" styleName="form-control" style={{...inputStyle ,float: 'left', marginRight: 5}} placeholder="確認新密碼" name="pw2" />
+                                        <input type="password" styleName="form-control" style={inputwithStyle} placeholder="請輸入舊密碼" name="oldpw" />
+                                        <input type="password" styleName="form-control" style={inputwithStyle} placeholder="請輸入新密碼" name="pw1" />
+                                        <input type="password" styleName="form-control" style={{...inputwithStyle ,float: 'left', marginRight: 5}} placeholder="確認新密碼" name="pw2" />
                                         <input type="hidden" name="action" value="changepw" />
                                         <button type="button" styleName="btn btn-default">確定</button>
                                     </form>
@@ -83,4 +83,4 @@ const MemberInfo = () => {
     );
 }
 
-export default Style()(MemberInfo);
+export default withStyle()(MemberInfo);

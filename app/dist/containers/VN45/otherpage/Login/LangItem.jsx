@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 
 import loginTheme from "@/css/style-new-login.scss";
 
@@ -12,4 +12,4 @@ const LangItem = ({word, img, index, click}) => {
     );
 }
 
-export default Style(loginTheme)(LangItem);
+export default withStyle(loginTheme)(LangItem);

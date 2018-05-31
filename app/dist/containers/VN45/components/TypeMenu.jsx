@@ -1,5 +1,5 @@
 import React from 'react';
-import { Style, compose, Dispatch } from '~/core/container';
+import { withStyle, compose, withDispatch } from '~/core/container';
 import { Link, withRouter } from "react-router-dom";
 
 import { clearAllBall } from "../action";
@@ -44,4 +44,4 @@ const GameType = ({match ,dispatch}) => {
     );
 }
 
-export default compose(Dispatch)(withRouter(Style()(GameType)));
+export default compose(withDispatch)(withRouter(withStyle()(GameType)));

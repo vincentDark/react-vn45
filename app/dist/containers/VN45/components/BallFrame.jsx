@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style, compose, Dispatch, Store } from '~/core/container';
+import { withStyle, compose, withDispatch, withStore } from '~/core/container';
 import { withRouter } from "react-router-dom";
 
 import BetLeft from "./BetLeft";
@@ -44,4 +44,4 @@ class BallFrame extends Component {
     }
 }
 
-export default compose(Dispatch, Store('BallsState.CheckedBall'))(withRouter(Style()(BallFrame)));
+export default compose(withDispatch, withStore('BallsState.CheckedBall'))(withRouter(withStyle()(BallFrame)));

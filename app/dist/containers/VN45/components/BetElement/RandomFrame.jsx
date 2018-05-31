@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style, compose, Dispatch } from '~/core/container';
+import { withStyle, compose, withDispatch } from '~/core/container';
 
 import { randomChoose } from "../../action";
 
@@ -12,6 +12,7 @@ class RandomFrame extends Component {
         let amount = +this.state.inputNum
         if (amount === 0 ) return false
         this.props.dispatch(randomChoose(amount))
+        lo
     }
 
     handleChange = (e) => {
@@ -44,4 +45,4 @@ class RandomFrame extends Component {
     }
 }
 
-export default compose(Dispatch)(Style()(RandomFrame));
+export default compose(withDispatch)(withStyle()(RandomFrame));

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 
 
 const SPonList = ({data}) => {
@@ -35,4 +35,4 @@ const SPonList = ({data}) => {
     );
 }
 
-export default Style()(SPonList);
+export default withStyle()(SPonList);

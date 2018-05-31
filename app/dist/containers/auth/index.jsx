@@ -4,7 +4,7 @@
  */
 import React, { Component } from 'react';
 import { STORE_KEY } from './constant';
-import { Dispatch, Store } from '~/core/container';
+import { withDispatch, withStore } from '~/core/container';
 import { fetchToken, fetchAccountInfo, keepToken } from './action';
 import type { Props } from './type';
 
@@ -46,4 +46,4 @@ export class Auth extends Component<void, Props, void> {
   }
 }
 
-export default Dispatch(Store(`${STORE_KEY}.auth`)(Auth));
+export default withDispatch(withStore(`${STORE_KEY}.auth`)(Auth));

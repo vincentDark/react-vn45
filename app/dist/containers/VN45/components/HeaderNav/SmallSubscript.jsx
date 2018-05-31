@@ -1,6 +1,6 @@
 import React from 'react';
 import enter from "@/img/enter.jpg";
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 
 const SmallSubscript = () => {
     const fontSize = {
@@ -48,4 +48,4 @@ const SmallSubscript = () => {
     );
 }
 
-export default Style()(SmallSubscript);
+export default withStyle()(SmallSubscript);

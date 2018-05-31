@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Style, compose, Dispatch } from '~/core/container';
+import { withStyle, compose, withDispatch } from '~/core/container';
 import { withRouter } from "react-router-dom";
 
 import { chooseBall } from "../../action";
@@ -25,4 +25,4 @@ class BallBox extends PureComponent {
 }
 
 
-export default compose(Dispatch)(withRouter(Style()(BallBox)));
+export default compose(withDispatch)(withRouter(withStyle()(BallBox)));

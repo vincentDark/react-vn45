@@ -1,5 +1,5 @@
 import React from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 import { Link, withRouter } from "react-router-dom";
 
 const Header = ({children, location}) => {
@@ -64,4 +64,4 @@ const Header = ({children, location}) => {
     );
 }
 
-export default withRouter(Style()(Header));
+export default withRouter(withStyle()(Header));

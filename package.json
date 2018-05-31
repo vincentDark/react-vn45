@@ -100,6 +100,7 @@
     "recompose": "^0.26.0",
     "redux": "^3.7.2",
     "redux-i18n": "^1.5.3",
+    "redux-observable": "^0.18.0",
     "redux-saga": "^0.15.6",
     "whatwg-fetch": "^2.0.3"
   },

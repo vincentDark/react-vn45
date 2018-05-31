@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 import { Redirect, withRouter } from "react-router-dom";
 
 import TypeMenu from "./TypeMenu";
@@ -51,4 +51,4 @@ class Main extends Component {
     }
 }
 
-export default Style()(Main);
+export default withStyle()(Main);

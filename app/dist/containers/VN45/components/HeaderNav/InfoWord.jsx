@@ -1,5 +1,5 @@
 import React from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 
 
 const InfoWord = ({blue='', title=''}) => {
@@ -16,4 +16,4 @@ const InfoWord = ({blue='', title=''}) => {
     );
 }
 
-export default Style()(InfoWord);
+export default withStyle()(InfoWord);

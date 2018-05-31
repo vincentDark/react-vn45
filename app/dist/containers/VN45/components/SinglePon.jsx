@@ -1,5 +1,5 @@
 import React from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 import { withRouter } from "react-router-dom";
 
 import SPonFrame from "./BetElement/SPonFrame";
@@ -18,4 +18,4 @@ const SinglePon = ({match}) => {
     );
 }
 
-export default withRouter(Style()(SinglePon));
+export default withRouter(withStyle()(SinglePon));

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 
 const NoticeAll = () => {
     return (
@@ -38,4 +38,4 @@ const NoticeAll = () => {
     );
 }
 
-export default Style()(NoticeAll);
+export default withStyle()(NoticeAll);

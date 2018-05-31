@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 
 const TotalBet = () => {
     return (
@@ -67,4 +67,4 @@ const TotalBet = () => {
     );
 }
 
-export default Style()(TotalBet);
+export default withStyle()(TotalBet);

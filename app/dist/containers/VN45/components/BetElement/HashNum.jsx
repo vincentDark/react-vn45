@@ -1,5 +1,5 @@
 import React from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 
 
 const HashNum = () => {
@@ -8,4 +8,4 @@ const HashNum = () => {
     );
 }
 
-export default Style()(HashNum);
+export default withStyle()(HashNum);

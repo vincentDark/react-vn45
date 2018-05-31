@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 
 import loginTheme from "@/css/style-new-login.scss";
 
@@ -67,4 +67,4 @@ class ChooseLang extends Component {
     }
 }
 
-export default Style(loginTheme)(ChooseLang);
+export default withStyle(loginTheme)(ChooseLang);

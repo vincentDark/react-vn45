@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Style } from '~/core/container';
+import { withStyle } from '~/core/container';
 
 import InfoWord from "./InfoWord";
 import SmallSubscript from "./SmallSubscript";
@@ -57,4 +57,4 @@ const Leftbar = () => {
 }
 
 
-export default Style()(Leftbar);
+export default withStyle()(Leftbar);
