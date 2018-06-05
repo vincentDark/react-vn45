@@ -93,6 +93,7 @@ module.exports = {
       'babel-polyfill',
       'es6-promise',
       'whatwg-fetch',
+      'rxjs',
       path.resolve(__dirname, 'app/main.js')
     ]
   }

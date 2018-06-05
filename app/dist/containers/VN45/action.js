@@ -1,48 +1,58 @@
 import fetchAPI from 'ext/action.effects/fetch-api';
 
+export function test() {
+  return {
+    type: 'FETCH_USER'
+  };
+}
 // 左邊球號
 export function clearAllBall() {
-    return {
-        type: 'CLEAR_ALL'
-    }
+  return {
+    type: 'CLEAR_ALL'
+  };
 }
 
 export function chooseBall(star, end, jump, type = 'SE') {
-    return{
-        type: 'CHOOSE_BALL',
-        star: star,
-        end: end,
-        jump: jump,
-        gameType: type
-    }
+  return {
+    type: 'CHOOSE_BALL',
+    star: star,
+    end: end,
+    jump: jump,
+    gameType: type
+  };
 }
 
 export function randomChoose(amount) {
-    return{
-        type: 'RANDOM_BALL',
-        amount: amount,
-    }
+  return {
+    type: 'RANDOM_BALL',
+    amount: amount
+  };
 }
 
 // 柱碰部分
 export function chooseColumn(column) {
-    return{
-        type: 'CHOOSE_COLUMN',
-        column: column,
-    }
+  return {
+    type: 'CHOOSE_COLUMN',
+    column: column
+  };
 }
 
-export function fetch() {
-  return fetchAPI('GET_CSRF_TOKEN', {
-    url: 'test-csrf'
-  });
+export function getToken() {
+  return {
+    type: 'GET_CSRF_TOKEN'
+  };
 }
+
+export const loginAction = payload => ({
+  type: 'ACTION_LOGIN',
+  data: payload
+});
 
 export function login(payload) {
   return fetchAPI('LOG_IN', {
     url: 'login',
     method: 'post',
-    body: payload,
+    body: payload
   });
 }
 
