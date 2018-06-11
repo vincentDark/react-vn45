@@ -39,6 +39,7 @@ class Login extends Component {
     // }
     let _token = window.csrf;
     let payload = { MEM_ID, password, _token };
+    // this.props.dispatch(loginAction(MEM_ID, password, _token));
     this.props.dispatch(loginAction(JSON.stringify(payload)));
   };
 

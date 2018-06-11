@@ -10,5 +10,5 @@ export default {
   },
   ['LOG_IN']: function*(res: ResponseType) {
     yield put(saveAuth(res));
-  },
+  }
 };
