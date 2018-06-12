@@ -21,6 +21,7 @@ const originwithStyle = {
 
 export default function(store = originwithStyle, action) {
   const { type } = action;
+  let auth;
   switch (type) {
     case 'TOKEN_SAVE':
       return {
@@ -32,14 +33,26 @@ export default function(store = originwithStyle, action) {
     case 'AUTH_SAVE':
       let { data } = action;
       let { errorCode } = data;
-      let auth = false;
-      if (errorCode == -3 || errorCode == 0) {
-        auth = true;
+      if (errorCode !== '0') {
+        return {
+          ...store,
+          auth: false
+        };
       }
       return {
         ...store,
+        auth: true,
+        data: data.data
+      };
+      break;
+
+    case 'LOGIN_SAVE':
+      action.data.errorCode == 0 ? (auth = true) : (auth = false);
+
+      return {
+        ...store,
         auth: auth,
-        fetched: data
+        fetched: action.data
       };
       break;
 

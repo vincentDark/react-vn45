@@ -4,7 +4,7 @@
  */
 import React, { Component } from 'react';
 import { withDispatch, withStore } from '~/core/container';
-import { getToken } from './action';
+import { getToken, getInfo } from './action';
 
 export class Auth extends Component<void, Props, void> {
   timer: number;
@@ -13,6 +13,7 @@ export class Auth extends Component<void, Props, void> {
   componentDidMount() {
     /* 拿token跟請求登入者資料 */
     this.props.dispatch(getToken());
+    this.props.dispatch(getInfo());
   }
 
   componentWillReceiveProps({ storeData }: Props) {

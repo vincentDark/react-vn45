@@ -1,6 +1,6 @@
 import view from './App';
 import BallsState from './reducer/BallsState';
-import { getToken, loginEpic } from './epic';
+import { getToken, loginEpic, getInfo } from './epic';
 
 export default {
   reducer: {
@@ -48,5 +48,5 @@ export default {
       component: view
     }
   ],
-  epic: [getToken, loginEpic]
+  epic: [getToken, loginEpic, getInfo]
 };
