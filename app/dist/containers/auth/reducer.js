@@ -30,8 +30,8 @@ export default function(store = originwithStyle, action) {
       break;
 
     case 'AUTH_SAVE':
-      let { payload } = action;
-      let { errorCode } = action.payload;
+      let { data } = action;
+      let { errorCode } = data;
       let auth = false;
       if (errorCode == -3 || errorCode == 0) {
         auth = true;
@@ -39,7 +39,7 @@ export default function(store = originwithStyle, action) {
       return {
         ...store,
         auth: auth,
-        fetched: payload
+        fetched: data
       };
       break;
 

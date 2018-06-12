@@ -1,14 +1,10 @@
 import view from './App';
 import BallsState from './reducer/BallsState';
-import info from './reducer/Info';
-import test from './reducer/test';
-import { getToken, fetchUserEpic, loginEpic } from './epic';
+import { getToken, loginEpic } from './epic';
 
 export default {
   reducer: {
-    BallsState: BallsState,
-    member: info,
-    test: test
+    BallsState: BallsState
   },
   router: [
     {
@@ -52,6 +48,5 @@ export default {
       component: view
     }
   ],
-  // subscribe: Saga
-  epic: [getToken, fetchUserEpic, loginEpic]
+  epic: [getToken, loginEpic]
 };

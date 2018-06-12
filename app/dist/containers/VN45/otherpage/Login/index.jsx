@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withStyle, compose, withDispatch, withStore } from '~/core/container';
-import { getToken, loginAction, test } from '../../action';
+import { getToken, loginAction } from '../../action';
 import loginTheme from '@/css_other/style-new-login.scss';
 
 import Logo from '@/img/NV45-LOGO-300.png';
@@ -18,10 +18,6 @@ class Login extends Component {
     open: false
   };
 
-  componentDidMount() {
-    this.props.dispatch(getToken());
-  }
-
   seePWD = () => {
     this.setState(preState => ({ show: !preState.show }));
   };
@@ -29,17 +25,9 @@ class Login extends Component {
   enter = () => {
     let MEM_ID = this.refs.name.value;
     let password = this.refs.password.value;
-
-    // this.props.dispatch(test())
-    // return;
-
-    // if ( ! (MEM_ID.trim() && password.trim()) ) {
-    //     this.setState({open: true});
-    //     return;
-    // }
     let _token = window.csrf;
     let payload = { MEM_ID, password, _token };
-    // this.props.dispatch(loginAction(MEM_ID, password, _token));
+
     this.props.dispatch(loginAction(JSON.stringify(payload)));
   };
 
@@ -52,8 +40,9 @@ class Login extends Component {
   };
 
   render() {
-    window.csrf = this.props.storeData.member.token;
-    let ping = this.props.storeData.test;
+    window.csrf = this.props.storeData.token;
+    console.log('this.props :');
+    console.log(this.props);
     console.log('window.csrf :');
     console.log(window.csrf);
     const actions = [
@@ -102,7 +91,7 @@ class Login extends Component {
                 </div>
               </div>
               <div styleName="btn1" onClick={this.enter}>
-                會員登入{ping ? 'true' : 'false'}
+                會員登入
               </div>
             </div>
             <div styleName="textgroup2">
@@ -148,6 +137,6 @@ class Login extends Component {
   }
 }
 
-export default compose(withDispatch, withStore('member', 'test'))(
+export default compose(withDispatch, withStore('member'))(
   withStyle(loginTheme)(Login)
 );

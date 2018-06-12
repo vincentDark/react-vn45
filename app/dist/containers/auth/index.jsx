@@ -3,10 +3,8 @@
  * @flow
  */
 import React, { Component } from 'react';
-import { STORE_KEY } from './constant';
 import { withDispatch, withStore } from '~/core/container';
-import { fetchToken, fetchAccountInfo, keepToken } from './action';
-import type { Props } from './type';
+import { getToken } from './action';
 
 export class Auth extends Component<void, Props, void> {
   timer: number;
@@ -14,27 +12,21 @@ export class Auth extends Component<void, Props, void> {
 
   componentDidMount() {
     /* 拿token跟請求登入者資料 */
-    if (process.env.NODE_ENV === 'development') {
-      this.props.dispatch([fetchToken(), fetchAccountInfo()]);
-    } else {
-      const metas: any = document.getElementsByTagName('meta');
-      const token: any = metas['csrf-token'].getAttribute('content');
-      this.props.dispatch([keepToken(token), fetchAccountInfo()]);
-    }
+    this.props.dispatch(getToken());
   }
 
   componentWillReceiveProps({ storeData }: Props) {
-    if (storeData) {
-      /* 登入後，五秒請求一次帳戶資料 */
-      if (this.timer) clearInterval(this.timer);
-      this.timer = setInterval(_ => {
-        this.props.dispatch(fetchAccountInfo());
-      }, 5000);
-    }
+    // if (storeData) {
+    //   /* 登入後，五秒請求一次帳戶資料 */
+    //   if (this.timer) clearInterval(this.timer);
+    //   this.timer = setInterval(_ => {
+    //     this.props.dispatch(fetchAccountInfo());
+    //   }, 5000);
+    // }
   }
 
   componentWillUnmount() {
-    clearInterval(this.timer);
+    // clearInterval(this.timer);
   }
 
   shouldComponentUpdate() {
@@ -46,4 +38,4 @@ export class Auth extends Component<void, Props, void> {
   }
 }
 
-export default withDispatch(withStore(`${STORE_KEY}.auth`)(Auth));
+export default withDispatch(Auth);

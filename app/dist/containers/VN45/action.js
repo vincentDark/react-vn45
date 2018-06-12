@@ -1,10 +1,3 @@
-import fetchAPI from 'ext/action.effects/fetch-api';
-
-export function test() {
-  return {
-    type: 'FETCH_USER'
-  };
-}
 // 左邊球號
 export function clearAllBall() {
   return {
@@ -37,11 +30,7 @@ export function chooseColumn(column) {
   };
 }
 
-export function getToken() {
-  return {
-    type: 'GET_CSRF_TOKEN'
-  };
-}
+// api 部分
 
 export const loginAction = payload => ({
   type: 'ACTION_LOGIN',

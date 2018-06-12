@@ -1,7 +1,5 @@
-// import fetch from "isomorphic-fetch";
 import 'rxjs';
 import { Observable } from 'rxjs';
-import { RES_FAILED, RES_SUCCEED } from './status';
 
 export const AJAX_METHOD = {
   GET: 'GET',
@@ -64,10 +62,10 @@ const buildRequestObservable = fetch => {
     fetch
       .then(response => {
         if (!response.ok) {
-          reject(buildErrorInfo(RES_FAILED, 'response code error'));
+          reject(buildErrorInfo(-1, 'response code error'));
         }
         response.json().then(data => {
-          if (data.status === RES_SUCCEED) {
+          if (data.status === 1) {
             resolve(data);
           } else {
             reject(data);
@@ -75,7 +73,7 @@ const buildRequestObservable = fetch => {
         });
       })
       .catch(e => {
-        reject(buildErrorInfo(RES_FAILED, e.toString()));
+        reject(buildErrorInfo(-1, e.toString()));
       });
   });
   return Observable.fromPromise(request);
