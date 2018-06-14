@@ -41,10 +41,6 @@ class Login extends Component {
 
   render() {
     window.csrf = this.props.storeData.token;
-    console.log('this.props :');
-    console.log(this.props);
-    console.log('window.csrf :');
-    console.log(window.csrf);
     const actions = [
       <FlatButton label="確認" primary={true} onClick={this.handleClose} />
     ];

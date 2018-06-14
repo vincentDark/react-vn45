@@ -1,21 +1,9 @@
-// import React from 'react';
-// import { render } from 'react-dom';
-// import router from '~/core/router';
-// Intro
-import IntroView from '~/containers/view';
-
-// render(
-//   router({
-//     master_component: IntroView,
-//     router_index: '/login'
-//   }),
-//   document.getElementById('container')
-// );
-
-/* app/main.js */
 import React from 'react';
 import { render } from 'react-dom';
 import router from '~/core/router';
+
+import IntroView from '~/containers/view';
+import middle from './routerMiddleware';
 
 render(
   router({
@@ -29,6 +17,7 @@ render(
     /* 路由設定 */
     routerIndex: '/login',
     routerNotFound: '/login',
+    routerMiddleware: middle,
     routerMiddleware: null
   }),
   document.getElementById('container') //定義在`entrance/index.html`中渲染內容的元素

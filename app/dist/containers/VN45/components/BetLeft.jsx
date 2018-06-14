@@ -13,13 +13,12 @@ class BetLeft extends Component {
   InputBall = (num, type) => {
     this.props.dispatch(chooseBall(num, num, 1, type));
   };
-
   render() {
     let { match } = this.props;
     let { type } = match.params;
+    console.log('BetLeftmatch.params :');
+    console.log(match.params);
     let ballNumber;
-    console.log('type :');
-    console.log(type);
     return (
       <div styleName="col-xs-6 ball-left">
         {type == 'C' ? <div styleName="ball-item disabled" /> : <RandomFrame />}

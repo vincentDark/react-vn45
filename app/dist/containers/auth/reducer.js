@@ -2,21 +2,7 @@ const originwithStyle = {
   auth: false,
   fetched: false,
   token: '',
-  data: {
-    account: '',
-    name: '',
-    nickname: '',
-    phone: '',
-    email: '',
-    credit: 0,
-    status: '',
-    appType: '',
-    appSn: '',
-    hasWithdraw: false,
-    phoneAuth: false,
-    depositCount: 0,
-    withdrawCount: 0
-  }
+  data: {}
 };
 
 export default function(store = originwithStyle, action) {

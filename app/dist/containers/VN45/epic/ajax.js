@@ -111,11 +111,7 @@ export const ajaxPost = (url, params) => {
   const data = {
     method: AJAX_METHOD.POST,
     headers: {
-      // Accept: 'application/json',
-      // "Content-Type": "x-www-form-urlencoded",
-      // "Content-Type": "application/x-www-form-urlencoded",
       'Content-Type': 'application/json',
-      // "Content-Type": "multipart/form-data",
       'X-CSRF-TOKEN': window.csrf
     },
     mode: 'cors',

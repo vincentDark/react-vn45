@@ -16,18 +16,18 @@ export class Auth extends Component<void, Props, void> {
     this.props.dispatch(getInfo());
   }
 
-  componentWillReceiveProps({ storeData }: Props) {
-    // if (storeData) {
-    //   /* 登入後，五秒請求一次帳戶資料 */
-    //   if (this.timer) clearInterval(this.timer);
-    //   this.timer = setInterval(_ => {
-    //     this.props.dispatch(fetchAccountInfo());
-    //   }, 5000);
-    // }
+  componentWillReceiveProps(storeData) {
+    if (storeData) {
+      /* 登入後，五秒請求一次帳戶資料 */
+      if (this.timer) clearInterval(this.timer);
+      this.timer = setInterval(_ => {
+        // this.props.dispatch(getInfo());
+      }, 5000);
+    }
   }
 
   componentWillUnmount() {
-    // clearInterval(this.timer);
+    clearInterval(this.timer);
   }
 
   shouldComponentUpdate() {

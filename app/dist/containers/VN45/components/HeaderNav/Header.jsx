@@ -2,6 +2,9 @@ import React from 'react';
 import { withStyle } from '~/core/container';
 import { Link, withRouter } from 'react-router-dom';
 
+import Marquee from './Marquee';
+import GameTime from './GameTime';
+
 const Header = ({ children, location }) => {
   const starName = ['1', '2', '3', '4'];
   let href = location.pathname;
@@ -23,14 +26,14 @@ const Header = ({ children, location }) => {
             </ul>
             <div styleName="marquee">
               <i styleName="fa fa-volume-up fa-lg" />
-              <marquee styleName="marquee-text" id="marquee" />
+              <Marquee />
             </div>
             <ul styleName="nav navbar-nav navbar-right navbartop-right">
               <li styleName="logout">
                 <a href="#">登出</a>
               </li>
               <li>
-                <a id="status-time">正在仔入盤口時間</a>
+                <GameTime />
               </li>
             </ul>
           </div>

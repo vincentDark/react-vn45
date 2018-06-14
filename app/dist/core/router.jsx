@@ -6,7 +6,7 @@ import I18n from 'redux-i18n';
 import Locales from '~/locales';
 /* router */
 import { Route, Switch, Redirect } from 'react-router-dom';
-import { ConnectedRouter } from 'react-router-redux';
+import { ConnectedRouter, replace } from 'react-router-redux';
 /* 系統設定 */
 import { rootRoutes } from './roots';
 import { sagaCreator, history, DevTools } from './store';
@@ -43,7 +43,7 @@ export default (setting = {}) => {
 
   /* store */
   const store = sagaCreator.create();
-  /* 開始啟用 saga */
+  /* 開始啟用 middleware */
   sagaCreator.run();
 
   /* 預設的路由處理 */
@@ -56,11 +56,13 @@ export default (setting = {}) => {
     const renderHandler = routerProps => () =>
       createFactory(Wrapper)(routerProps);
     const redirectHandler = path => <Redirect to={path} />;
+    const asyncRedirectHandler = path => store.dispatch(replace(path));
 
     return routerParams => routerProps =>
-      middleware(store.getState(), routerParams)(
+      middleware(store, routerParams)(
         renderHandler(routerProps),
-        redirectHandler
+        redirectHandler,
+        asyncRedirectHandler
       );
   };
 
