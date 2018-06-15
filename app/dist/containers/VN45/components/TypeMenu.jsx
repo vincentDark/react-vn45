@@ -6,8 +6,6 @@ import { clearAllBall } from '../action';
 
 const GameType = ({ match, dispatch }) => {
   let { star, type } = match.params;
-  console.log('match.params :');
-  console.log(match.params);
   const typeBtn = [['S', '單碰'], ['SE', '連碰'], ['C', '柱碰']];
 
   const clearAll = () => {
@@ -24,8 +22,6 @@ const GameType = ({ match, dispatch }) => {
     } else {
       return typeBtn.map((item, index) => {
         let active = '';
-        console.log('item :');
-        console.log(item);
         if (item[0] == type) {
           active = 'active';
         }
@@ -49,4 +45,4 @@ const GameType = ({ match, dispatch }) => {
   );
 };
 
-export default compose(withDispatch)(withRouter(withStyle()(GameType)));
+export default compose(withRouter, withDispatch, withStyle())(GameType);

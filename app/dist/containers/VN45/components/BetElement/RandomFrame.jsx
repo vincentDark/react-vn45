@@ -12,7 +12,6 @@ class RandomFrame extends Component {
     let amount = +this.state.inputNum;
     if (amount === 0) return false;
     this.props.dispatch(randomChoose(amount));
-    lo;
   };
 
   handleChange = e => {

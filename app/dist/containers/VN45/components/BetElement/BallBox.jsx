@@ -27,4 +27,4 @@ class BallBox extends PureComponent {
   }
 }
 
-export default compose(withDispatch)(withRouter(withStyle()(BallBox)));
+export default compose(withRouter, withDispatch, withStyle())(BallBox);

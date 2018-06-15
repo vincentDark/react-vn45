@@ -84,7 +84,7 @@ class App extends Component {
                 auth == false ? (
                   <Login {...props} />
                 ) : (
-                  <Redirect to="/vn45/4/S" />
+                  <Redirect to="/vn45/4/SE" />
                 )
               }
             />

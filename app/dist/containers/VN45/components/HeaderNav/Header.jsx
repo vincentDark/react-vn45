@@ -33,7 +33,7 @@ const Header = ({ children, location }) => {
                 <a href="#">登出</a>
               </li>
               <li>
-                <GameTime />
+                <GameTime game={hrefContent[1]} />
               </li>
             </ul>
           </div>

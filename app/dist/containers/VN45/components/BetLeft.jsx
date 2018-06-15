@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { withStyle, compose, withDispatch } from '~/core/container';
+import { withStyle, compose, withDispatch, withStore } from '~/core/container';
 import { withRouter } from 'react-router-dom';
 import { chooseBall } from '../action';
 
@@ -16,8 +16,6 @@ class BetLeft extends Component {
   render() {
     let { match } = this.props;
     let { type } = match.params;
-    console.log('BetLeftmatch.params :');
-    console.log(match.params);
     let ballNumber;
     return (
       <div styleName="col-xs-6 ball-left">
@@ -156,4 +154,6 @@ class BetLeft extends Component {
   }
 }
 
-export default compose(withDispatch)(withRouter(withStyle()(BetLeft)));
+export default compose(withRouter, withDispatch, withStore('routing'))(
+  withStyle()(BetLeft)
+);
