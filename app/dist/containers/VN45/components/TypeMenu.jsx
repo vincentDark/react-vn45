@@ -7,7 +7,6 @@ import { clearAllBall } from '../action';
 const GameType = ({ match, dispatch }) => {
   let { star, type } = match.params;
   const typeBtn = [['S', '單碰'], ['SE', '連碰'], ['C', '柱碰']];
-
   const clearAll = () => {
     dispatch(clearAllBall());
   };

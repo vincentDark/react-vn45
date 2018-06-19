@@ -3,15 +3,9 @@ import { withStyle } from '~/core/container';
 
 import InfoWord from './InfoWord';
 import SmallSubscript from './SmallSubscript';
+import MemberMoney from './MemberMoney';
 
 const Leftbar = () => {
-  const InfoTitle = [
-    '總和總額度',
-    '剩餘總和總額度',
-    '單碰上限',
-    '單碰下限',
-    '單組限額'
-  ];
   const InfoBet = ['組數', '價格', '每碰金額', '下注金額'];
   let blue = true;
 
@@ -23,15 +17,7 @@ const Leftbar = () => {
       <div styleName="col-xs-12 colum line-top line-bot blue">
         <b>會員名稱</b>
       </div>
-      {InfoTitle.map((word, index) => {
-        blue = !blue;
-        return <InfoWord key={index} title={word} blue={blue ? 'blue' : ''} />;
-      })}
-      <div styleName="col-xs-12 colum-btn line-bot">
-        <a styleName="btn-next btn-block">
-          ` - ` <span /> <br /> 下一個
-        </a>
-      </div>
+      <MemberMoney />
       <div styleName="nav-pay">
         {InfoBet.map((word, index) => {
           blue = !blue;

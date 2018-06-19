@@ -7166,7 +7166,7 @@ div.textgreen {
   width: 300px;
   background-color: #f0f0f0;
   box-shadow: 2px 0px 3px rgba(0%, 0%, 0%, 0.3);
-  z-index: 200;
+  z-index: 1000;
   min-height: 768px !important;
   .blue {
     background-color: #90caf9;
@@ -8595,9 +8595,9 @@ ul.nav-submenu div {
 
 .isclose {
   position: absolute;
-  top: 78px;
+  top: 82px;
   height: 100%;
-  left: 0;
+  left: 300px;
   right: 0;
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 999;

@@ -6,6 +6,7 @@ import TypeMenu from './TypeMenu';
 import BallFrame from './BallFrame';
 import SinglePon from './SinglePon';
 import CPonFrame from './CPonFrame';
+import CloseGame from './CloseGame';
 
 class Main extends Component {
   render() {
@@ -29,7 +30,6 @@ class Main extends Component {
       isLegal = false;
       redirectPath = '/vn45/4/S';
     }
-
     return (
       <div id="content">
         {/* 判斷星別跟玩法是否合法 不合法導向到正確的地方 */}
@@ -38,6 +38,7 @@ class Main extends Component {
           <TypeMenu />
           {type == 'S' ? <SinglePon /> : <BallFrame />}
           {type == 'C' && <CPonFrame />}
+          <CloseGame />
         </div>
       </div>
     );
