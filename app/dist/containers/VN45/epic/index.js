@@ -30,3 +30,13 @@ export const loginEpic = action$ =>
       params: action.data
     })
   );
+
+// 取開球結果
+export const getOpenBallResult = action$ =>
+  action$.ofType('GET_OPEN_BALL').mergeMap(action =>
+    ajaxRequest({
+      actionType: 'Ball_Result',
+      method: AJAX_METHOD.GET,
+      url: 'http://sb51a-w.lucky588.net/login'
+    })
+  );

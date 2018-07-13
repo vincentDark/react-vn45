@@ -31,19 +31,10 @@ export function chooseColumn(column) {
 }
 
 // api 部分
-
 export const loginAction = payload => ({
   type: 'ACTION_LOGIN',
   data: payload
 });
-
-export function login(payload) {
-  return fetchAPI('LOG_IN', {
-    url: 'login',
-    method: 'post',
-    body: payload
-  });
-}
 
 export function saveToken(items) {
   return {
@@ -60,5 +51,11 @@ export function saveAuth(items) {
     payload: {
       ...items
     }
+  };
+}
+
+export function getOpenGameAction() {
+  return {
+    type: 'GET_OPEN_BALL'
   };
 }

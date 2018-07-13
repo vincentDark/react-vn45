@@ -9,7 +9,8 @@ export default {
   router: [
     {
       path: '/login',
-      component: view
+      component: view,
+      auth: 'logged_in'
     },
     {
       path: '/vn45/:star/:type',
